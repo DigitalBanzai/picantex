@@ -1,0 +1,857 @@
+{
+  "extName": {
+    "message": "Picantex – Full Page Screenshot, Annotate & PDF"
+  },
+  "extDescription": {
+    "message": "Full page, area or element screenshots. Annotate, blur and save as PNG, JPEG or searchable PDF. Opens PDFs. All on your computer."
+  },
+  "actionTitle": {
+    "message": "Picantex: capture screenshot"
+  },
+  "menuVisible": {
+    "message": "Capture visible area"
+  },
+  "menuSelection": {
+    "message": "Capture selection"
+  },
+  "menuElement": {
+    "message": "Capture an element"
+  },
+  "menuFull": {
+    "message": "Capture full page"
+  },
+  "popupVisible": {
+    "message": "Visible area"
+  },
+  "popupSelection": {
+    "message": "Selection"
+  },
+  "popupElement": {
+    "message": "Element"
+  },
+  "popupFull": {
+    "message": "Full page"
+  },
+  "popupPanels": {
+    "message": "Scroll inner sections too"
+  },
+  "popupPanelsTitle": {
+    "message": "For web apps where the page stays still and a section scrolls inside it: when switched on, Full page and Element capture that section in full"
+  },
+  "popupStop": {
+    "message": "Stop the capture"
+  },
+  "popupStopFull": {
+    "message": "Keep the part already captured. Esc on the page works too"
+  },
+  "popupStopDelayed": {
+    "message": "Cancel the countdown. Esc on the page works too"
+  },
+  "actionStopTitle": {
+    "message": "Picantex: capturing. Press Esc on the page to stop"
+  },
+  "noteStopped": {
+    "message": "Capture stopped: here is the part captured until then."
+  },
+  "popupOpenApp": {
+    "message": "Open Picantex"
+  },
+  "popupOpenAppTitle": {
+    "message": "Opens Picantex without capturing anything: from there you can open an image or a PDF from the computer, the multi-page document and your other work"
+  },
+  "openMenu": {
+    "message": "Open"
+  },
+  "openMenuTitle": {
+    "message": "Open an image or a PDF from the computer, or the multi-page document"
+  },
+  "openFile": {
+    "message": "Image or PDF from the computer…"
+  },
+  "openDocument": {
+    "message": "Multi-page document"
+  },
+  "verifyTitle": {
+    "message": "Verification tools: fingerprint and stamp of saved files"
+  },
+  "verifyOn": {
+    "message": "Verification tools"
+  },
+  "stampOn": {
+    "message": "Stamp under the image"
+  },
+  "propsWidth": {
+    "message": "Thickness"
+  },
+  "propsStrength": {
+    "message": "Strength"
+  },
+  "propsSize": {
+    "message": "Size"
+  },
+  "propsStepContent": {
+    "message": "Content and level"
+  },
+  "colorsTitle": {
+    "message": "Colour: quick colours, any other colour, its code and the eyedropper"
+  },
+  "popupVerifyTitle": {
+    "message": "After each save, shows the SHA-256 fingerprint of the file, which anyone can use to check that it has not been altered, and lets you add a stamp with the full address of the page, saved from the internet or loaded from the device, title, date and time"
+  },
+  "stampTitle": {
+    "message": "Adds a strip under the image with the full address of the page, saved from the internet or loaded from the device, and the date and time of capture, by this computer's clock. Writes the full address, title, date and time into the file's properties. Applies to everything saved from this tab, including the document's PDF"
+  },
+  "stampCaptured": {
+    "message": "Captured $1"
+  },
+  "stampOpened": {
+    "message": "Opened $1"
+  },
+  "fpTitle": {
+    "message": "File fingerprint (SHA-256)"
+  },
+  "fpCopy": {
+    "message": "Copy"
+  },
+  "fpCopied": {
+    "message": "Copied"
+  },
+  "fpSave": {
+    "message": "Save the fingerprint…"
+  },
+  "fpSaveTitle": {
+    "message": "Saves a small .sha256 file to keep in the same folder as the file: the system's own tools can check it, for example sha256sum -c"
+  },
+  "fpCaptured": {
+    "message": "Captured $1"
+  },
+  "fpSaved": {
+    "message": "Saved $1"
+  },
+  "vfOpenMenu": {
+    "message": "Check a file…"
+  },
+  "vfTitle": {
+    "message": "Check a file"
+  },
+  "vfLead": {
+    "message": "Check that a file is identical to when its fingerprint was computed. Everything happens on your computer: the file goes nowhere."
+  },
+  "vfDrop": {
+    "message": "Drop the file and its .sha256 here, or choose them. You can check several at once."
+  },
+  "vfChoose": {
+    "message": "Choose files…"
+  },
+  "vfPaste": {
+    "message": "Or paste the fingerprint to compare it with:"
+  },
+  "vfBadPaste": {
+    "message": "This is not a SHA-256 fingerprint: it takes 64 characters, digits and letters from a to f."
+  },
+  "vfIndependent": {
+    "message": "For a check that does not depend on Picantex, use the system's own tools: sha256sum -c on Linux, shasum -a 256 -c on Mac, Get-FileHash on Windows."
+  },
+  "vfComputing": {
+    "message": "Computing the fingerprint…"
+  },
+  "vfComputed": {
+    "message": "File fingerprint:"
+  },
+  "vfExpected": {
+    "message": "Expected fingerprint:"
+  },
+  "vfSame": {
+    "message": "Identical: the fingerprint matches."
+  },
+  "vfDifferent": {
+    "message": "Different: this is not the file of that fingerprint."
+  },
+  "vfNoReference": {
+    "message": "No fingerprint to compare it with. Here it is, if you want to copy it."
+  },
+  "vfMissing": {
+    "message": "Listed in the .sha256 file, but not chosen."
+  },
+  "helpTitle": {
+    "message": "Picantex help"
+  },
+  "helpContents": {
+    "message": "Contents"
+  },
+  "helpLink": {
+    "message": "? Help"
+  },
+  "helpMore": {
+    "message": "Learn more"
+  },
+  "helpWhat": {
+    "message": "What is this?"
+  },
+  "hintPanels": {
+    "message": "For web apps where the page stays still and only a part scrolls, like an inbox or a chat: with the switch on, Full page and Element capture that part in full."
+  },
+  "hintVerify": {
+    "message": "The fingerprint proves the file has not changed since it was saved; the stamp says where the image comes from and when it was captured. They do not certify that the content is true."
+  },
+  "hintStep": {
+    "message": "Steps number themselves in the order you place them. Shift+click adds a sub-step (1.1, 1.2…)."
+  },
+  "hintEraser": {
+    "message": "The eraser paints with the background colour. To hide sensitive data, the Solid cover tool is safer."
+  },
+  "hintDocument": {
+    "message": "Gathers several images into a single searchable PDF. Drag the pages to reorder them; double-click one to reopen it in the editor."
+  },
+  "purgeButton": {
+    "message": "Empty the storage now"
+  },
+  "purgeAsk": {
+    "message": "Delete all the captures in the storage right away? They cannot be recovered. The document pages stay, and images already open in the editor stay until you close their tab."
+  },
+  "purgeYes": {
+    "message": "Empty"
+  },
+  "purgeNo": {
+    "message": "Cancel"
+  },
+  "purgeDone": {
+    "message": "Storage emptied (captures deleted: $1)."
+  },
+  "purgeEmpty": {
+    "message": "The storage was already empty."
+  },
+  "popupDelay": {
+    "message": "Visible area in"
+  },
+  "popupRestricted": {
+    "message": "On this page Chrome only allows the visible area."
+  },
+  "popupDelayTitle": {
+    "message": "For menus and hints that close when you click elsewhere: open them on the page before the time runs out"
+  },
+  "selectionHint": {
+    "message": "Drag to select the area · Shift or Ctrl: adjustable area · Esc to cancel"
+  },
+  "elementHint": {
+    "message": "Click the element to capture · ↑ or wheel to widen · Esc to cancel"
+  },
+  "noteSelectionBlocked": {
+    "message": "Chrome doesn't allow selection on this page: the visible area was captured, you can crop it here."
+  },
+  "noteFullBlocked": {
+    "message": "Chrome doesn't allow automatic scrolling on this page: only the visible area was captured."
+  },
+  "noteTruncated": {
+    "message": "Very long page: only the first part was captured."
+  },
+  "notePanelsOff": {
+    "message": "Here the content scrolls inside a section of the page, so only part of it was captured. To capture all of it, turn on “Scroll inner sections too” in the Picantex menu."
+  },
+  "errorTabChanged": {
+    "message": "capture interrupted, the tab is no longer in the foreground."
+  },
+  "errorElementGone": {
+    "message": "the chosen element is no longer on the page."
+  },
+  "errorCapture": {
+    "message": "This page could not be captured: $1"
+  },
+  "errorNotFound": {
+    "message": "Screenshot not found: capture the page again."
+  },
+  "errorOpen": {
+    "message": "The screenshot could not be opened: $1"
+  },
+  "errorFailed": {
+    "message": "Operation failed: $1"
+  },
+  "errorTooLarge": {
+    "message": "the image is too large for this format."
+  },
+  "errorDownload": {
+    "message": "the download failed."
+  },
+  "editorTitle": {
+    "message": "Screenshot editor"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "saveTitle": {
+    "message": "Save: choose name and folder (Ctrl+S)"
+  },
+  "formatTitle": {
+    "message": "File format"
+  },
+  "copy": {
+    "message": "Copy"
+  },
+  "copyTitle": {
+    "message": "Copy the image to the clipboard (Ctrl+Shift+C)"
+  },
+  "color": {
+    "message": "Color"
+  },
+  "colorRed": {
+    "message": "Red"
+  },
+  "colorYellow": {
+    "message": "Yellow"
+  },
+  "colorGreen": {
+    "message": "Green"
+  },
+  "colorBlue": {
+    "message": "Blue"
+  },
+  "colorBlack": {
+    "message": "Black"
+  },
+  "colorWhite": {
+    "message": "White"
+  },
+  "strokeTitle": {
+    "message": "Stroke thickness (also blur and pixel strength, and eraser size)"
+  },
+  "text": {
+    "message": "Text"
+  },
+  "fontSizeTitle": {
+    "message": "Text size"
+  },
+  "bold": {
+    "message": "Bold"
+  },
+  "boldLetter": {
+    "message": "B"
+  },
+  "italic": {
+    "message": "Italic"
+  },
+  "italicLetter": {
+    "message": "I"
+  },
+  "undoTitle": {
+    "message": "Undo (Ctrl+Z)"
+  },
+  "redoTitle": {
+    "message": "Redo (Ctrl+Y)"
+  },
+  "deleteTitle": {
+    "message": "Delete the selected object (Del)"
+  },
+  "toolSelect": {
+    "message": "Select, move and resize"
+  },
+  "toolCrop": {
+    "message": "Crop"
+  },
+  "toolEraser": {
+    "message": "Eraser: click or drag over the image to rub out what is underneath"
+  },
+  "toolRect": {
+    "message": "Rectangle (Shift: square)"
+  },
+  "toolEllipse": {
+    "message": "Circle / ellipse (Shift: circle)"
+  },
+  "toolLine": {
+    "message": "Line (Shift: 45° angles)"
+  },
+  "toolArrow": {
+    "message": "Arrow (Shift: 45° angles)"
+  },
+  "toolPen": {
+    "message": "Pen: draw freehand"
+  },
+  "toolBubble": {
+    "message": "Speech bubble"
+  },
+  "toolStep": {
+    "message": "Numbered step: numbers follow the order you add them. Shift+click for a sub-step (1.1, 1.2…)"
+  },
+  "stepStyleTitle": {
+    "message": "Content of the step: numbers, letters, Roman numerals, a symbol or your own text"
+  },
+  "stepCustom": {
+    "message": "Text…"
+  },
+  "stepLabelTitle": {
+    "message": "The text of the step (6 characters at most)"
+  },
+  "stepSubTitle": {
+    "message": "Sub-step: smaller, numbered within the step before it (1.1, 1.2…). Also with Shift+click"
+  },
+  "toolHighlight": {
+    "message": "Highlighter"
+  },
+  "toolBlur": {
+    "message": "Blur"
+  },
+  "toolPixel": {
+    "message": "Pixelate"
+  },
+  "toolCover": {
+    "message": "Solid cover: the safest way to hide data"
+  },
+  "toolPageText": {
+    "message": "Copy the page text: drag over the area you need"
+  },
+  "toolPageTextNone": {
+    "message": "The page text is not available for this image"
+  },
+  "cropApply": {
+    "message": "✓ Apply"
+  },
+  "cropApplyTitle": {
+    "message": "Apply the crop (Enter)"
+  },
+  "cropCancelTitle": {
+    "message": "Cancel the crop (Esc)"
+  },
+  "cropHint": {
+    "message": "Drag the area to keep, then press Enter or “Apply”"
+  },
+  "menuCopy": {
+    "message": "Copy image"
+  },
+  "menuCopyText": {
+    "message": "Copy all the text"
+  },
+  "menuCopyObject": {
+    "message": "Copy object"
+  },
+  "menuPasteObject": {
+    "message": "Paste object"
+  },
+  "menuDelete": {
+    "message": "Delete object"
+  },
+  "menuFront": {
+    "message": "Bring to front"
+  },
+  "menuForward": {
+    "message": "Bring forward"
+  },
+  "menuBackward": {
+    "message": "Send backward"
+  },
+  "menuBack": {
+    "message": "Send to back"
+  },
+  "preparing": {
+    "message": "Preparing the file…"
+  },
+  "copying": {
+    "message": "Copying…"
+  },
+  "copied": {
+    "message": "Image copied to the clipboard"
+  },
+  "objectCopied": {
+    "message": "Object copied. Ctrl+V pastes it, Ctrl+Shift+C copies the image"
+  },
+  "objectCut": {
+    "message": "Object cut. Ctrl+V pastes it"
+  },
+  "textCopied": {
+    "message": "Text copied: $1"
+  },
+  "textNone": {
+    "message": "There is no page text in this area"
+  },
+  "textHint": {
+    "message": "Drag over the area whose text you want to copy"
+  },
+  "saved": {
+    "message": "File saved"
+  },
+  "saveCancelled": {
+    "message": "Save cancelled"
+  },
+  "languageTitle": {
+    "message": "Language (Auto follows the browser)"
+  },
+  "languageAuto": {
+    "message": "Auto"
+  },
+  "openPrompt": {
+    "message": "Drag an image or a PDF here, paste an image (Ctrl+V) or choose a file"
+  },
+  "openChoose": {
+    "message": "Choose a file"
+  },
+  "errorImage": {
+    "message": "This is not an image that Picantex can open"
+  },
+  "zoomTitle": {
+    "message": "Image zoom: fit the width, show it whole, or a percentage (Ctrl + wheel, or the + and − keys)"
+  },
+  "zoomWidth": {
+    "message": "Fit width"
+  },
+  "zoomPage": {
+    "message": "Whole"
+  },
+  "toolPicker": {
+    "message": "Eyedropper: pick a colour from the image"
+  },
+  "hexTitle": {
+    "message": "Colour code: #rrggbb, or #rrggbbaa to add transparency (the last two digits)"
+  },
+  "printTitle": {
+    "message": "Print the image (Ctrl+P)"
+  },
+  "docButtonTitle": {
+    "message": "Turn the multi-page document on/off: gather several images in a single PDF"
+  },
+  "popupDocument": {
+    "message": "Open the document"
+  },
+  "docTitle": {
+    "message": "Document"
+  },
+  "docPagesOne": {
+    "message": "1 page"
+  },
+  "docPagesMany": {
+    "message": "$1 pages"
+  },
+  "docEmpty": {
+    "message": "No pages yet. Add the image you have in the editor, or choose or drop here images from your computer."
+  },
+  "docAdd": {
+    "message": "Add this image"
+  },
+  "docLayout": {
+    "message": "Page size"
+  },
+  "docOriginal": {
+    "message": "Original"
+  },
+  "docLayoutTitle": {
+    "message": "Original: each page is as large as its image. A4: images are fitted to the sheet and long ones continue on the following sheets"
+  },
+  "docSave": {
+    "message": "Save PDF"
+  },
+  "docPrint": {
+    "message": "Print"
+  },
+  "docClear": {
+    "message": "Empty document"
+  },
+  "docClearAsk": {
+    "message": "Delete all the pages of the document?"
+  },
+  "docClearYes": {
+    "message": "Yes, empty it"
+  },
+  "docClearNo": {
+    "message": "Cancel"
+  },
+  "docCloseTitle": {
+    "message": "Close the document panel"
+  },
+  "docRemoveTitle": {
+    "message": "Remove this page"
+  },
+  "docDragTitle": {
+    "message": "Drag up or down to change the order; onto the work area, or double-click, to reopen the page in the editor"
+  },
+  "docAdding": {
+    "message": "Adding to the document…"
+  },
+  "docAdded": {
+    "message": "Added to the document as page $1"
+  },
+  "docUpdatePage": {
+    "message": "Update page $1"
+  },
+  "docPageUpdated": {
+    "message": "Page $1 updated"
+  },
+  "docSaved": {
+    "message": "PDF saved. The pages stay in the document until you empty it."
+  },
+  "docCleared": {
+    "message": "Document emptied"
+  },
+  "printing": {
+    "message": "Preparing to print…"
+  },
+  "docAddFiles": {
+    "message": "Add from your computer…"
+  },
+  "docAddFilesTitle": {
+    "message": "Choose one or more saved images: they become pages of the document, in the same order. A PDF opens separately, so you can choose its pages. You can also drag them onto this panel"
+  },
+  "docFilesAdded": {
+    "message": "Images added to the document: $1"
+  },
+  "docFilesSkipped": {
+    "message": "files not readable as images: $1"
+  },
+  "pdfTitle": {
+    "message": "Open a PDF"
+  },
+  "pdfNoticeTitle": {
+    "message": "How Picantex opens PDFs"
+  },
+  "pdfNotice": {
+    "message": "To read PDFs, Picantex uses Mozilla's PDF.js, the reader built into Firefox: it is the only component we did not write ourselves. It works on your computer, in a closed space: it sees only the PDF you open, not your captures or your documents, and it cannot connect to the internet. It runs only when you open a PDF."
+  },
+  "pdfNoticeOk": {
+    "message": "Got it"
+  },
+  "pdfChoosePrompt": {
+    "message": "Choose a PDF from your computer, or drag it here."
+  },
+  "pdfChoose": {
+    "message": "Choose a PDF"
+  },
+  "pdfLoading": {
+    "message": "Opening the PDF…"
+  },
+  "pdfError": {
+    "message": "This file cannot be opened as a PDF: it may be damaged, or not a PDF at all."
+  },
+  "pdfPassword": {
+    "message": "This PDF is protected by a password:"
+  },
+  "pdfPasswordOpen": {
+    "message": "Open"
+  },
+  "pdfPasswordWrong": {
+    "message": "Wrong password: try again."
+  },
+  "pdfHint": {
+    "message": "Click to choose pages (Shift+click for a range), double-click to open one in the editor."
+  },
+  "pdfPagesOne": {
+    "message": "1 page"
+  },
+  "pdfPagesMany": {
+    "message": "$1 pages"
+  },
+  "pdfChosenOne": {
+    "message": "1 chosen"
+  },
+  "pdfChosen": {
+    "message": "$1 chosen"
+  },
+  "pdfAll": {
+    "message": "All"
+  },
+  "pdfNone": {
+    "message": "None"
+  },
+  "pdfOpenEditor": {
+    "message": "Open in the editor"
+  },
+  "pdfOpenEditorTitle": {
+    "message": "Each chosen page opens in the editor, in its own tab, with its text ready to copy (10 at most)"
+  },
+  "pdfTooMany": {
+    "message": "The editor opens at most 10 pages at a time: for all the others there is the document"
+  },
+  "pdfAddDocument": {
+    "message": "Add to the document"
+  },
+  "pdfAddDocumentTitle": {
+    "message": "The chosen pages go into the multi-page document, with their text"
+  },
+  "pdfPreparing": {
+    "message": "Preparing pages: $1 of $2…"
+  },
+  "pdfAddedDocument": {
+    "message": "Pages added to the document: $1"
+  },
+  "pdfPageTitle": {
+    "message": "$1 – page $2"
+  },
+  "popupPdf": {
+    "message": "Open this PDF in Picantex"
+  },
+  "popupPdfNote": {
+    "message": "Every page, with text you can copy"
+  },
+  "pdfCaptured": {
+    "message": "This is a picture of the visible part of the PDF. To get every page and text you can copy, open it with Picantex."
+  },
+  "pdfOpenIt": {
+    "message": "Open the PDF"
+  },
+  "pdfDownloading": {
+    "message": "Getting the PDF from the tab…"
+  },
+  "pdfDownloadFailed": {
+    "message": "Picantex cannot get “$1” again from the site: this happens with PDFs behind a sign-in or created on the spot. Save it with the download button of Chrome's viewer, then choose it here."
+  },
+  "pdfLocalHint": {
+    "message": "“$1” is on your computer, and Chrome does not let extensions read files. Choose it here: it opens right away."
+  },
+  "popupImage": {
+    "message": "Open this image in Picantex"
+  },
+  "popupImageNote": {
+    "message": "The original, at full resolution"
+  },
+  "imageDownloading": {
+    "message": "Getting the image from the tab…"
+  },
+  "imageDownloadFailed": {
+    "message": "Picantex cannot get “$1” again from the site. Save it on your computer and open it from here."
+  },
+  "imageLocalHint": {
+    "message": "“$1” is on your computer, and Chrome does not let extensions read files: choose it above, or drag it here."
+  },
+  "pageNoteSiteOne": {
+    "message": "You have a note on this site"
+  },
+  "pageNoteSiteMany": {
+    "message": "You have $1 notes on this site"
+  },
+  "pageNoteQuote": {
+    "message": "“$1”"
+  },
+  "pageNoteThisPage": {
+    "message": "On this page"
+  },
+  "pageNoteMore": {
+    "message": "All notes on this site ($1)…"
+  },
+  "pageNoteEmpty": {
+    "message": "(empty)"
+  },
+  "pageNotePlaceholder": {
+    "message": "Write here…"
+  },
+  "pageNoteDelete": {
+    "message": "Delete"
+  },
+  "pageNoteDeleteAsk": {
+    "message": "Delete this note?"
+  },
+  "pageNoteDeleteYes": {
+    "message": "Delete"
+  },
+  "pageNoteDeleteNo": {
+    "message": "No"
+  },
+  "pageNoteExported": {
+    "message": "Exported from Picantex on $1."
+  },
+  "pageNoteExportPdf": {
+    "message": "Export PDF"
+  },
+  "pageNoteExportMd": {
+    "message": "Export Markdown"
+  },
+  "pageNoteFollowTitle": {
+    "message": "Side notes"
+  },
+  "pageNoteFollowOpen": {
+    "message": "Side notes: the side panel with your notes, at hand while you change page, site or tab"
+  },
+  "pageNoteFollowNew": {
+    "message": "New note"
+  },
+  "pageNoteFollowFree": {
+    "message": "Notes are deleted when you close Chrome: export them so you don't lose them."
+  },
+  "pageNoteFollowIncognito": {
+    "message": "In Incognito, notes are deleted when you close the last Incognito window: export them so you don't lose them."
+  },
+  "pageNoteFollowFrom": {
+    "message": "From:"
+  },
+  "pageNoteFollowCopy": {
+    "message": "Copy"
+  },
+  "pageNoteFollowCopied": {
+    "message": "Copied"
+  },
+  "pageNoteFollowExportTitle": {
+    "message": "Side notes"
+  },
+  "pageNoteFollowTag": {
+    "message": "Side note"
+  },
+  "pageNoteNoPage": {
+    "message": "No page"
+  },
+  "pageNoteFollowNoneFree": {
+    "message": "No notes yet. Write one with “New note”. Or, on a page, select some text and press $1, or right-click, Picantex › Margin note: the note quotes the text and remembers the page."
+  },
+  "pageNoteFollowNoneFreeNoKey": {
+    "message": "No notes yet. Write one with “New note”. Or, on a page, select some text and right-click, Picantex › Margin note: the note quotes the text and remembers the page."
+  },
+  "pageNoteSideCommand": {
+    "message": "Add a margin note, in the side panel"
+  },
+  "pageNoteFollowLoose": {
+    "message": "Note without a page. For a note that remembers the page in front of you: $1, or right-click, Picantex › Margin note."
+  },
+  "pageNoteFollowLooseNoKey": {
+    "message": "Note without a page. For a note that remembers the page in front of you: right-click, Picantex › Margin note."
+  },
+  "pageNoteFollowDeleteAll": {
+    "message": "Delete notes"
+  },
+  "pageNoteFollowDeleteAllAsk": {
+    "message": "Delete all side notes ($1)? They cannot be recovered."
+  },
+  "pageNoteInPanel": {
+    "message": "Side note"
+  },
+  "pageNoteOpenPanel": {
+    "message": "Open the panel"
+  },
+  "pageNoteSide": {
+    "message": "Margin note"
+  },
+  "pageNoteSideTitle": {
+    "message": "A side note, in the side panel: it quotes any selected text and remembers this page"
+  },
+  "pageNoteUnexportedOne": {
+    "message": "1 note not exported yet"
+  },
+  "pageNoteUnexportedMany": {
+    "message": "$1 notes not exported yet"
+  },
+  "pageNoteAllExported": {
+    "message": "Notes exported. You can export them as many times as you like."
+  },
+  "longCaptureParts": {
+    "message": "Very long page: captured in $1 parts, already in the document."
+  },
+  "longSaveNow": {
+    "message": "Save it all as PDF now"
+  },
+  "longReview": {
+    "message": "Review the parts"
+  },
+  "areaCapture": {
+    "message": "Capture"
+  },
+  "areaCancel": {
+    "message": "Cancel"
+  },
+  "areaAdjustHint": {
+    "message": "Drag the edges or the area · scroll the page to extend it · Enter to capture"
+  },
+  "resumeCapture": {
+    "message": "Continue from here"
+  },
+  "resumeGone": {
+    "message": "The page is no longer open as it was: open it again and capture anew."
+  },
+  "resumedParts": {
+    "message": "Resumed: $1 more parts added to the document."
+  },
+  "resumedPartsOne": {
+    "message": "Resumed: one more part added to the document."
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="vfTitle">Picantex</title>
+  <link rel="stylesheet" href="verify-file.css">
+</head>
+<body>
+  <!-- Verifica di un file con la sua impronta SHA-256 (vedi verify-file.js). I testi arrivano da _locales. -->
+  <header id="bar">
+    <img src="icons/icon32.png" alt="" width="24" height="24">
+    <h1 data-i18n="vfTitle"></h1>
+  </header>
+
+  <main>
+    <p class="lead" data-i18n="vfLead"></p>
+
+    <section id="drop">
+      <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+      <p data-i18n="vfDrop"></p>
+      <button class="btn accent" data-action="choose" data-i18n="vfChoose"></button>
+      <input type="file" id="files" multiple hidden>
+    </section>
+
+    <label id="paste">
+      <span data-i18n="vfPaste"></span>
+      <input type="text" id="pasted" spellcheck="false" autocomplete="off" maxlength="200">
+    </label>
+    <p class="error" id="paste-error" data-i18n="vfBadPaste" hidden></p>
+
+    <ul id="results"></ul>
+
+    <p class="note" data-i18n="vfIndependent"></p>
+  </main>
+
+  <script type="module" src="verify-file.js"></script>
+</body>
+</html>

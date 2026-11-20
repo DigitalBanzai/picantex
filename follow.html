@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="pageNoteFollowTitle">Picantex</title>
+  <link rel="stylesheet" href="follow.css">
+</head>
+<body>
+  <!-- Il pannello laterale con le note a fianco (vedi follow.js). In alto, sempre in vista anche scorrendo:
+       il titolo e, nella versione gratuita, l'avviso che le note si cancellano chiudendo Chrome -->
+  <div class="top" id="top">
+  <header>
+    <h1>
+      <svg viewBox="0 0 24 24"><path d="M9 3h6l-1 7 4 4H6l4-4zM12 14v7"/></svg>
+      <span data-i18n="pageNoteFollowTitle"></span>
+    </h1>
+    <button class="btn accent" id="new" data-i18n="pageNoteFollowNew"></button>
+  </header>
+  <!-- Versione gratuita: le note spariscono chiudendo Chrome. Un avviso ben visibile, con le note ancora da
+       esportare e i pulsanti per farlo subito (vedi showUnexported in follow.js) -->
+  <section class="keep" id="keep" hidden>
+    <p class="warning">
+      <svg viewBox="0 0 24 24"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.5v.5"/></svg>
+      <span data-i18n="pageNoteFollowFree"></span>
+    </p>
+    <p class="count" id="unexported"></p>
+    <p class="now" id="export-now">
+      <button class="btn" data-export="pdf" data-i18n="pageNoteExportPdf"></button>
+      <button class="btn" data-export="md" data-i18n="pageNoteExportMd"></button>
+    </p>
+  </section>
+  </div>
+  <p class="empty" id="empty" hidden></p>
+  <div id="list"></div>
+  <footer id="tools" hidden>
+    <button class="btn" id="export-pdf" data-i18n="pageNoteExportPdf"></button>
+    <button class="btn" id="export-md" data-i18n="pageNoteExportMd"></button>
+    <!-- Eliminare tutte le note a fianco, con una conferma (vedi showClear in follow.js) -->
+    <p class="clear" id="clear"></p>
+  </footer>
+  <script type="module" src="follow.js"></script>
+</body>
+</html>

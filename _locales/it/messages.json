@@ -1,0 +1,857 @@
+{
+  "extName": {
+    "message": "Picantex – Screenshot pagina intera, annotazioni e PDF"
+  },
+  "extDescription": {
+    "message": "Screenshot di pagina intera, area o elemento. Annota, sfoca e salva in PNG, JPEG o PDF ricercabile. Apre i PDF. Tutto in locale."
+  },
+  "actionTitle": {
+    "message": "Picantex: cattura schermata"
+  },
+  "menuVisible": {
+    "message": "Cattura area visibile"
+  },
+  "menuSelection": {
+    "message": "Cattura selezione"
+  },
+  "menuElement": {
+    "message": "Cattura un elemento"
+  },
+  "menuFull": {
+    "message": "Cattura pagina intera"
+  },
+  "popupVisible": {
+    "message": "Area visibile"
+  },
+  "popupSelection": {
+    "message": "Selezione"
+  },
+  "popupElement": {
+    "message": "Elemento"
+  },
+  "popupFull": {
+    "message": "Pagina intera"
+  },
+  "popupPanels": {
+    "message": "Scorri anche le sezioni interne"
+  },
+  "popupPanelsTitle": {
+    "message": "Per le web app in cui la pagina sta ferma e scorre una sezione al suo interno: con l'interruttore acceso, Pagina intera ed Elemento catturano quella sezione per intero"
+  },
+  "popupStop": {
+    "message": "Ferma la cattura"
+  },
+  "popupStopFull": {
+    "message": "Tieni la parte già catturata. Anche con Esc sulla pagina"
+  },
+  "popupStopDelayed": {
+    "message": "Annulla il conto alla rovescia. Anche con Esc sulla pagina"
+  },
+  "actionStopTitle": {
+    "message": "Picantex: cattura in corso. Premi Esc sulla pagina per fermarla"
+  },
+  "noteStopped": {
+    "message": "Cattura fermata: qui c'è la parte catturata fino a quel momento."
+  },
+  "popupOpenApp": {
+    "message": "Apri Picantex"
+  },
+  "popupOpenAppTitle": {
+    "message": "Apre Picantex senza catturare nulla: da lì si aprono un'immagine o un PDF del computer, il documento a più pagine e gli altri lavori"
+  },
+  "openMenu": {
+    "message": "Apri"
+  },
+  "openMenuTitle": {
+    "message": "Apri un'immagine o un PDF del computer, oppure il documento a più pagine"
+  },
+  "openFile": {
+    "message": "Immagine o PDF dal computer…"
+  },
+  "openDocument": {
+    "message": "Documento a più pagine"
+  },
+  "verifyTitle": {
+    "message": "Strumenti di verifica: impronta e timbro dei file salvati"
+  },
+  "verifyOn": {
+    "message": "Strumenti di verifica"
+  },
+  "stampOn": {
+    "message": "Timbro sotto l'immagine"
+  },
+  "propsWidth": {
+    "message": "Spessore"
+  },
+  "propsStrength": {
+    "message": "Intensità"
+  },
+  "propsSize": {
+    "message": "Grandezza"
+  },
+  "propsStepContent": {
+    "message": "Contenuto e livello"
+  },
+  "colorsTitle": {
+    "message": "Colore: colori rapidi, qualsiasi altro colore, il codice e il contagocce"
+  },
+  "popupVerifyTitle": {
+    "message": "Dopo ogni salvataggio mostra l'impronta SHA-256 del file, con cui chiunque può controllare che non sia stato modificato, e permette di aggiungere un timbro con indirizzo completo della pagina, salvata da internet o caricata dal dispositivo, titolo, data e ora"
+  },
+  "stampTitle": {
+    "message": "Aggiunge sotto l'immagine una fascia con l'indirizzo completo della pagina, salvata da internet o caricata dal dispositivo, e la data e l'ora della cattura, secondo l'orologio di questo computer. Nelle proprietà del file scrive indirizzo completo, titolo, data e ora. Vale per i salvataggi di questa scheda, compreso il PDF del documento"
+  },
+  "stampCaptured": {
+    "message": "Catturata $1"
+  },
+  "stampOpened": {
+    "message": "Aperta $1"
+  },
+  "fpTitle": {
+    "message": "Impronta del file (SHA-256)"
+  },
+  "fpCopy": {
+    "message": "Copia"
+  },
+  "fpCopied": {
+    "message": "Copiata"
+  },
+  "fpSave": {
+    "message": "Salva l'impronta…"
+  },
+  "fpSaveTitle": {
+    "message": "Salva un piccolo file .sha256 da tenere nella stessa cartella del file: lo verificano gli strumenti del sistema, per esempio sha256sum -c"
+  },
+  "fpCaptured": {
+    "message": "Cattura $1"
+  },
+  "fpSaved": {
+    "message": "Salvataggio $1"
+  },
+  "vfOpenMenu": {
+    "message": "Verifica un file…"
+  },
+  "vfTitle": {
+    "message": "Verifica un file"
+  },
+  "vfLead": {
+    "message": "Controlla che un file sia identico a quando ne è stata calcolata l'impronta. Tutto avviene sul tuo computer: il file non va da nessuna parte."
+  },
+  "vfDrop": {
+    "message": "Trascina qui il file e il suo .sha256, oppure sceglili. Puoi controllarne anche più di uno insieme."
+  },
+  "vfChoose": {
+    "message": "Scegli i file…"
+  },
+  "vfPaste": {
+    "message": "Oppure incolla l'impronta con cui confrontarlo:"
+  },
+  "vfBadPaste": {
+    "message": "Non è un'impronta SHA-256: servono 64 caratteri, cifre e lettere da a a f."
+  },
+  "vfIndependent": {
+    "message": "Per un controllo che non dipenda da Picantex usa gli strumenti del sistema: sha256sum -c su Linux, shasum -a 256 -c su Mac, Get-FileHash su Windows."
+  },
+  "vfComputing": {
+    "message": "Calcolo l'impronta…"
+  },
+  "vfComputed": {
+    "message": "Impronta del file:"
+  },
+  "vfExpected": {
+    "message": "Impronta attesa:"
+  },
+  "vfSame": {
+    "message": "Identico: l'impronta corrisponde."
+  },
+  "vfDifferent": {
+    "message": "Diverso: non è il file di quell'impronta."
+  },
+  "vfNoReference": {
+    "message": "Nessuna impronta con cui confrontarlo. Eccola, se vuoi copiarla."
+  },
+  "vfMissing": {
+    "message": "Elencato nel file .sha256, ma non scelto."
+  },
+  "helpTitle": {
+    "message": "Aiuto di Picantex"
+  },
+  "helpContents": {
+    "message": "Indice"
+  },
+  "helpLink": {
+    "message": "? Aiuto"
+  },
+  "helpMore": {
+    "message": "Scopri di più"
+  },
+  "helpWhat": {
+    "message": "Che cos'è?"
+  },
+  "hintPanels": {
+    "message": "Per le applicazioni web in cui la pagina sta ferma e scorre solo una parte, come la posta o le chat: con l'interruttore acceso, Pagina intera ed Elemento catturano quella parte per intero."
+  },
+  "hintVerify": {
+    "message": "L'impronta dimostra che il file non è cambiato dopo il salvataggio; il timbro dice da dove viene l'immagine e quando è stata catturata. Non certificano che il contenuto sia vero."
+  },
+  "hintStep": {
+    "message": "I bollini si numerano da soli nell'ordine in cui li metti. Maiusc+clic mette un sottobollino (1.1, 1.2…)."
+  },
+  "hintEraser": {
+    "message": "La gomma dipinge con il colore dello sfondo. Per nascondere dati sensibili è più sicuro lo strumento Copertura piena."
+  },
+  "hintDocument": {
+    "message": "Raccoglie più immagini in un unico PDF ricercabile. Trascina le pagine per riordinarle; doppio clic per riaprirne una nell'editor."
+  },
+  "purgeButton": {
+    "message": "Svuota l'archivio adesso"
+  },
+  "purgeAsk": {
+    "message": "Cancellare subito tutte le catture dell'archivio? Non si potranno recuperare. Le pagine del documento restano, e le immagini già aperte nell'editor restano finché non ne chiudi la scheda."
+  },
+  "purgeYes": {
+    "message": "Svuota"
+  },
+  "purgeNo": {
+    "message": "Annulla"
+  },
+  "purgeDone": {
+    "message": "Archivio svuotato (catture cancellate: $1)."
+  },
+  "purgeEmpty": {
+    "message": "L'archivio era già vuoto."
+  },
+  "popupDelay": {
+    "message": "Area visibile tra"
+  },
+  "popupRestricted": {
+    "message": "Su questa pagina Chrome permette solo l'area visibile."
+  },
+  "popupDelayTitle": {
+    "message": "Per menu e suggerimenti che si chiudono se clicchi altrove: aprili sulla pagina prima che scada il tempo"
+  },
+  "selectionHint": {
+    "message": "Trascina per selezionare l'area · Maiusc o Ctrl: area modificabile · Esc per annullare"
+  },
+  "elementHint": {
+    "message": "Clicca l'elemento da catturare · ↑ o rotellina per allargare · Esc per annullare"
+  },
+  "noteSelectionBlocked": {
+    "message": "Su questa pagina Chrome non permette la selezione: ho catturato l'area visibile, puoi ritagliarla qui."
+  },
+  "noteFullBlocked": {
+    "message": "Su questa pagina Chrome non permette lo scorrimento automatico: ho catturato solo l'area visibile."
+  },
+  "noteTruncated": {
+    "message": "Pagina molto lunga: ho catturato solo la prima parte."
+  },
+  "notePanelsOff": {
+    "message": "Qui il contenuto scorre dentro una sezione della pagina e ne vedi solo una parte. Per catturarlo tutto, accendi «Scorri anche le sezioni interne» nel menu di Picantex."
+  },
+  "errorTabChanged": {
+    "message": "cattura interrotta, la scheda non è più in primo piano."
+  },
+  "errorElementGone": {
+    "message": "l'elemento scelto non è più nella pagina."
+  },
+  "errorCapture": {
+    "message": "Impossibile catturare questa pagina: $1"
+  },
+  "errorNotFound": {
+    "message": "Schermata non trovata: ripeti la cattura dalla pagina che ti interessa."
+  },
+  "errorOpen": {
+    "message": "Impossibile aprire la schermata: $1"
+  },
+  "errorFailed": {
+    "message": "Operazione non riuscita: $1"
+  },
+  "errorTooLarge": {
+    "message": "immagine troppo grande per questo formato."
+  },
+  "errorDownload": {
+    "message": "download non riuscito."
+  },
+  "editorTitle": {
+    "message": "Editor schermata"
+  },
+  "save": {
+    "message": "Salva"
+  },
+  "saveTitle": {
+    "message": "Salva: scegli nome e cartella (Ctrl+S)"
+  },
+  "formatTitle": {
+    "message": "Formato del file"
+  },
+  "copy": {
+    "message": "Copia"
+  },
+  "copyTitle": {
+    "message": "Copia l'immagine negli appunti (Ctrl+Maiusc+C)"
+  },
+  "color": {
+    "message": "Colore"
+  },
+  "colorRed": {
+    "message": "Rosso"
+  },
+  "colorYellow": {
+    "message": "Giallo"
+  },
+  "colorGreen": {
+    "message": "Verde"
+  },
+  "colorBlue": {
+    "message": "Blu"
+  },
+  "colorBlack": {
+    "message": "Nero"
+  },
+  "colorWhite": {
+    "message": "Bianco"
+  },
+  "strokeTitle": {
+    "message": "Spessore del tratto (anche intensità di sfocatura e pixel, e grandezza della gomma)"
+  },
+  "text": {
+    "message": "Testo"
+  },
+  "fontSizeTitle": {
+    "message": "Dimensione del testo"
+  },
+  "bold": {
+    "message": "Grassetto"
+  },
+  "boldLetter": {
+    "message": "G"
+  },
+  "italic": {
+    "message": "Corsivo"
+  },
+  "italicLetter": {
+    "message": "C"
+  },
+  "undoTitle": {
+    "message": "Annulla (Ctrl+Z)"
+  },
+  "redoTitle": {
+    "message": "Ripeti (Ctrl+Y)"
+  },
+  "deleteTitle": {
+    "message": "Elimina l'oggetto selezionato (Canc)"
+  },
+  "toolSelect": {
+    "message": "Seleziona, sposta e ridimensiona"
+  },
+  "toolCrop": {
+    "message": "Ritaglia"
+  },
+  "toolEraser": {
+    "message": "Gomma: clicca o trascina sulla schermata per cancellare ciò che c'è sotto"
+  },
+  "toolRect": {
+    "message": "Rettangolo (Maiusc: quadrato)"
+  },
+  "toolEllipse": {
+    "message": "Cerchio / ellisse (Maiusc: cerchio)"
+  },
+  "toolLine": {
+    "message": "Linea (Maiusc: angoli di 45°)"
+  },
+  "toolArrow": {
+    "message": "Freccia (Maiusc: angoli di 45°)"
+  },
+  "toolPen": {
+    "message": "Penna: disegna a mano libera"
+  },
+  "toolBubble": {
+    "message": "Fumetto"
+  },
+  "toolStep": {
+    "message": "Bollino numerato: i numeri seguono l'ordine in cui li metti. Maiusc+clic per un sottobollino (1.1, 1.2…)"
+  },
+  "stepStyleTitle": {
+    "message": "Contenuto del bollino: numeri, lettere, numeri romani, un simbolo o un testo tuo"
+  },
+  "stepCustom": {
+    "message": "Testo…"
+  },
+  "stepLabelTitle": {
+    "message": "Il testo del bollino (al massimo 6 caratteri)"
+  },
+  "stepSubTitle": {
+    "message": "Sottobollino: più piccolo, numerato dentro il bollino che lo precede (1.1, 1.2…). Anche con Maiusc+clic"
+  },
+  "toolHighlight": {
+    "message": "Evidenziatore"
+  },
+  "toolBlur": {
+    "message": "Sfocatura"
+  },
+  "toolPixel": {
+    "message": "Pixel (mosaico)"
+  },
+  "toolCover": {
+    "message": "Copertura piena: il modo più sicuro per nascondere un dato"
+  },
+  "toolPageText": {
+    "message": "Copia il testo della pagina: trascina sull'area che ti interessa"
+  },
+  "toolPageTextNone": {
+    "message": "Il testo della pagina non è disponibile per questa immagine"
+  },
+  "cropApply": {
+    "message": "✓ Applica"
+  },
+  "cropApplyTitle": {
+    "message": "Applica il ritaglio (Invio)"
+  },
+  "cropCancelTitle": {
+    "message": "Annulla il ritaglio (Esc)"
+  },
+  "cropHint": {
+    "message": "Trascina l'area da tenere, poi premi Invio o «Applica»"
+  },
+  "menuCopy": {
+    "message": "Copia immagine"
+  },
+  "menuCopyText": {
+    "message": "Copia tutto il testo"
+  },
+  "menuCopyObject": {
+    "message": "Copia oggetto"
+  },
+  "menuPasteObject": {
+    "message": "Incolla oggetto"
+  },
+  "menuDelete": {
+    "message": "Elimina oggetto"
+  },
+  "menuFront": {
+    "message": "Porta in primo piano"
+  },
+  "menuForward": {
+    "message": "Porta avanti"
+  },
+  "menuBackward": {
+    "message": "Porta indietro"
+  },
+  "menuBack": {
+    "message": "Porta in fondo"
+  },
+  "preparing": {
+    "message": "Preparo il file…"
+  },
+  "copying": {
+    "message": "Copio…"
+  },
+  "copied": {
+    "message": "Immagine copiata negli appunti"
+  },
+  "objectCopied": {
+    "message": "Oggetto copiato. Ctrl+V lo incolla, Ctrl+Maiusc+C copia l'immagine"
+  },
+  "objectCut": {
+    "message": "Oggetto tagliato. Ctrl+V lo incolla"
+  },
+  "textCopied": {
+    "message": "Testo copiato: $1"
+  },
+  "textNone": {
+    "message": "In quest'area non c'è testo della pagina"
+  },
+  "textHint": {
+    "message": "Trascina sull'area di cui vuoi copiare il testo"
+  },
+  "saved": {
+    "message": "File salvato"
+  },
+  "saveCancelled": {
+    "message": "Salvataggio annullato"
+  },
+  "languageTitle": {
+    "message": "Lingua (Auto segue quella del browser)"
+  },
+  "languageAuto": {
+    "message": "Auto"
+  },
+  "openPrompt": {
+    "message": "Trascina qui un'immagine o un PDF, incolla un'immagine (Ctrl+V) oppure scegli un file"
+  },
+  "openChoose": {
+    "message": "Scegli un file"
+  },
+  "errorImage": {
+    "message": "Questa non è un'immagine che Picantex può aprire"
+  },
+  "zoomTitle": {
+    "message": "Zoom dell'immagine: adatta in larghezza, intera o in percentuale (Ctrl + rotellina, oppure i tasti + e −)"
+  },
+  "zoomWidth": {
+    "message": "Larghezza"
+  },
+  "zoomPage": {
+    "message": "Intera"
+  },
+  "toolPicker": {
+    "message": "Contagocce: prendi un colore dall'immagine"
+  },
+  "hexTitle": {
+    "message": "Codice del colore: #rrggbb, oppure #rrggbbaa per aggiungere la trasparenza (le ultime due cifre)"
+  },
+  "printTitle": {
+    "message": "Stampa l'immagine (Ctrl+P)"
+  },
+  "docButtonTitle": {
+    "message": "Attiva/Disattiva documento a più pagine: riunisci più immagini in un solo PDF"
+  },
+  "popupDocument": {
+    "message": "Apri il documento"
+  },
+  "docTitle": {
+    "message": "Documento"
+  },
+  "docPagesOne": {
+    "message": "1 pagina"
+  },
+  "docPagesMany": {
+    "message": "$1 pagine"
+  },
+  "docEmpty": {
+    "message": "Ancora nessuna pagina. Aggiungi l'immagine che hai nell'editor, oppure scegli o trascina qui delle immagini dal computer."
+  },
+  "docAdd": {
+    "message": "Aggiungi questa immagine"
+  },
+  "docLayout": {
+    "message": "Misura delle pagine"
+  },
+  "docOriginal": {
+    "message": "Originale"
+  },
+  "docLayoutTitle": {
+    "message": "Originale: ogni pagina è grande quanto la sua immagine. A4: le immagini si adattano al foglio e quelle lunghe proseguono sui fogli successivi"
+  },
+  "docSave": {
+    "message": "Salva PDF"
+  },
+  "docPrint": {
+    "message": "Stampa"
+  },
+  "docClear": {
+    "message": "Svuota documento"
+  },
+  "docClearAsk": {
+    "message": "Eliminare tutte le pagine del documento?"
+  },
+  "docClearYes": {
+    "message": "Sì, svuota"
+  },
+  "docClearNo": {
+    "message": "Annulla"
+  },
+  "docCloseTitle": {
+    "message": "Chiudi il pannello del documento"
+  },
+  "docRemoveTitle": {
+    "message": "Togli questa pagina"
+  },
+  "docDragTitle": {
+    "message": "Trascina su o giù per cambiare l'ordine; nell'area di lavoro, o con un doppio clic, per riaprire la pagina nell'editor"
+  },
+  "docAdding": {
+    "message": "Aggiungo al documento…"
+  },
+  "docAdded": {
+    "message": "Aggiunta al documento come pagina $1"
+  },
+  "docUpdatePage": {
+    "message": "Aggiorna la pagina $1"
+  },
+  "docPageUpdated": {
+    "message": "Pagina $1 aggiornata"
+  },
+  "docSaved": {
+    "message": "PDF salvato. Le pagine restano nel documento finché non lo svuoti."
+  },
+  "docCleared": {
+    "message": "Documento svuotato"
+  },
+  "printing": {
+    "message": "Preparo la stampa…"
+  },
+  "docAddFiles": {
+    "message": "Aggiungi dal computer…"
+  },
+  "docAddFilesTitle": {
+    "message": "Scegli una o più immagini già salvate: diventano pagine del documento, nello stesso ordine. Un PDF si apre a parte, per sceglierne le pagine. Puoi anche trascinarli su questo pannello"
+  },
+  "docFilesAdded": {
+    "message": "Immagini aggiunte al documento: $1"
+  },
+  "docFilesSkipped": {
+    "message": "file non leggibili come immagine: $1"
+  },
+  "pdfTitle": {
+    "message": "Apri un PDF"
+  },
+  "pdfNoticeTitle": {
+    "message": "Come Picantex apre i PDF"
+  },
+  "pdfNotice": {
+    "message": "Per leggere i PDF, Picantex usa PDF.js di Mozilla, il lettore di Firefox: è l'unico componente che non abbiamo scritto noi. Lavora sul tuo computer, in uno spazio chiuso: vede solo il PDF che apri, non le tue catture né i tuoi documenti, e non può collegarsi a internet. Entra in funzione solo quando apri un PDF."
+  },
+  "pdfNoticeOk": {
+    "message": "Ho capito"
+  },
+  "pdfChoosePrompt": {
+    "message": "Scegli un PDF dal computer, oppure trascinalo qui."
+  },
+  "pdfChoose": {
+    "message": "Scegli un PDF"
+  },
+  "pdfLoading": {
+    "message": "Apro il PDF…"
+  },
+  "pdfError": {
+    "message": "Questo file non si apre come PDF: forse è danneggiato, o non è un PDF."
+  },
+  "pdfPassword": {
+    "message": "Questo PDF è protetto da una password:"
+  },
+  "pdfPasswordOpen": {
+    "message": "Apri"
+  },
+  "pdfPasswordWrong": {
+    "message": "Password sbagliata: riprova."
+  },
+  "pdfHint": {
+    "message": "Clic per scegliere le pagine (Maiusc+clic per un intervallo), doppio clic per aprirne una nell'editor."
+  },
+  "pdfPagesOne": {
+    "message": "1 pagina"
+  },
+  "pdfPagesMany": {
+    "message": "$1 pagine"
+  },
+  "pdfChosenOne": {
+    "message": "1 scelta"
+  },
+  "pdfChosen": {
+    "message": "$1 scelte"
+  },
+  "pdfAll": {
+    "message": "Tutte"
+  },
+  "pdfNone": {
+    "message": "Nessuna"
+  },
+  "pdfOpenEditor": {
+    "message": "Apri nell'editor"
+  },
+  "pdfOpenEditorTitle": {
+    "message": "Ogni pagina scelta si apre nell'editor, in una scheda sua, con il testo da copiare (al massimo 10)"
+  },
+  "pdfTooMany": {
+    "message": "Nell'editor si aprono al massimo 10 pagine alla volta: per tutte le altre c'è il documento"
+  },
+  "pdfAddDocument": {
+    "message": "Aggiungi al documento"
+  },
+  "pdfAddDocumentTitle": {
+    "message": "Le pagine scelte vanno nel documento a più pagine, con il loro testo"
+  },
+  "pdfPreparing": {
+    "message": "Preparo le pagine: $1 di $2…"
+  },
+  "pdfAddedDocument": {
+    "message": "Pagine aggiunte al documento: $1"
+  },
+  "pdfPageTitle": {
+    "message": "$1 – pagina $2"
+  },
+  "popupPdf": {
+    "message": "Apri questo PDF in Picantex"
+  },
+  "popupPdfNote": {
+    "message": "Tutte le pagine, con il testo da copiare"
+  },
+  "pdfCaptured": {
+    "message": "Questa è la foto della parte visibile del PDF. Per avere tutte le pagine e il testo da copiare, aprilo con Picantex."
+  },
+  "pdfOpenIt": {
+    "message": "Apri il PDF"
+  },
+  "pdfDownloading": {
+    "message": "Prendo il PDF dalla scheda…"
+  },
+  "pdfDownloadFailed": {
+    "message": "Picantex non riesce a riprendere «$1» dal sito: succede con i PDF dietro un accesso o creati al momento. Salvalo con il pulsante di download del lettore di Chrome, poi sceglilo qui."
+  },
+  "pdfLocalHint": {
+    "message": "«$1» è sul tuo computer, e Chrome non lascia leggere i file alle estensioni. Sceglilo qui: si apre subito."
+  },
+  "popupImage": {
+    "message": "Apri questa immagine in Picantex"
+  },
+  "popupImageNote": {
+    "message": "L'originale, a piena risoluzione"
+  },
+  "imageDownloading": {
+    "message": "Prendo l'immagine dalla scheda…"
+  },
+  "imageDownloadFailed": {
+    "message": "Picantex non riesce a riprendere «$1» dal sito. Salvala sul computer e aprila da qui."
+  },
+  "imageLocalHint": {
+    "message": "«$1» è sul tuo computer, e Chrome non lascia leggere i file alle estensioni: sceglila qui sopra, o trascinala qui."
+  },
+  "pageNoteSiteOne": {
+    "message": "In questo sito hai una nota"
+  },
+  "pageNoteSiteMany": {
+    "message": "In questo sito hai $1 note"
+  },
+  "pageNoteQuote": {
+    "message": "«$1»"
+  },
+  "pageNoteThisPage": {
+    "message": "Su questa pagina"
+  },
+  "pageNoteMore": {
+    "message": "Tutte le note del sito ($1)…"
+  },
+  "pageNoteEmpty": {
+    "message": "(vuota)"
+  },
+  "pageNotePlaceholder": {
+    "message": "Scrivi qui…"
+  },
+  "pageNoteDelete": {
+    "message": "Elimina"
+  },
+  "pageNoteDeleteAsk": {
+    "message": "Eliminare questa nota?"
+  },
+  "pageNoteDeleteYes": {
+    "message": "Elimina"
+  },
+  "pageNoteDeleteNo": {
+    "message": "No"
+  },
+  "pageNoteExported": {
+    "message": "Esportate da Picantex il $1."
+  },
+  "pageNoteExportPdf": {
+    "message": "Esporta PDF"
+  },
+  "pageNoteExportMd": {
+    "message": "Esporta Markdown"
+  },
+  "pageNoteFollowTitle": {
+    "message": "Note a fianco"
+  },
+  "pageNoteFollowOpen": {
+    "message": "Note a fianco: il pannello laterale con le tue note, a portata mentre cambi pagina, sito o scheda"
+  },
+  "pageNoteFollowNew": {
+    "message": "Nuova nota"
+  },
+  "pageNoteFollowFree": {
+    "message": "Le note si cancellano quando chiudi Chrome: esportale per non perderle."
+  },
+  "pageNoteFollowIncognito": {
+    "message": "In incognito le note si cancellano quando chiudi l'ultima finestra in incognito: esportale per non perderle."
+  },
+  "pageNoteFollowFrom": {
+    "message": "Da:"
+  },
+  "pageNoteFollowCopy": {
+    "message": "Copia"
+  },
+  "pageNoteFollowCopied": {
+    "message": "Copiata"
+  },
+  "pageNoteFollowExportTitle": {
+    "message": "Note a fianco"
+  },
+  "pageNoteFollowTag": {
+    "message": "A fianco"
+  },
+  "pageNoteNoPage": {
+    "message": "Senza pagina"
+  },
+  "pageNoteFollowNoneFree": {
+    "message": "Nessuna nota. Scrivine una con «Nuova nota». Oppure, su una pagina, seleziona del testo e premi $1, o usa il tasto destro, Picantex › Nota a margine: la nota cita il testo e ricorda la pagina."
+  },
+  "pageNoteFollowNoneFreeNoKey": {
+    "message": "Nessuna nota. Scrivine una con «Nuova nota». Oppure, su una pagina, seleziona del testo e usa il tasto destro, Picantex › Nota a margine: la nota cita il testo e ricorda la pagina."
+  },
+  "pageNoteSideCommand": {
+    "message": "Aggiungi una nota a margine, nel pannello laterale"
+  },
+  "pageNoteFollowLoose": {
+    "message": "Nota senza pagina. Per una nota che ricorda la pagina che hai davanti: $1, oppure tasto destro, Picantex › Nota a margine."
+  },
+  "pageNoteFollowLooseNoKey": {
+    "message": "Nota senza pagina. Per una nota che ricorda la pagina che hai davanti: tasto destro, Picantex › Nota a margine."
+  },
+  "pageNoteFollowDeleteAll": {
+    "message": "Elimina note"
+  },
+  "pageNoteFollowDeleteAllAsk": {
+    "message": "Eliminare tutte le note a fianco ($1)? Non si possono recuperare."
+  },
+  "pageNoteInPanel": {
+    "message": "A fianco"
+  },
+  "pageNoteOpenPanel": {
+    "message": "Apri il pannello"
+  },
+  "pageNoteSide": {
+    "message": "Nota a margine"
+  },
+  "pageNoteSideTitle": {
+    "message": "Una nota a fianco, nel pannello laterale: se hai selezionato del testo lo cita, e ricorda questa pagina"
+  },
+  "pageNoteUnexportedOne": {
+    "message": "1 nota non ancora esportata"
+  },
+  "pageNoteUnexportedMany": {
+    "message": "$1 note non ancora esportate"
+  },
+  "pageNoteAllExported": {
+    "message": "Note esportate. Puoi esportarle tutte le volte che vuoi."
+  },
+  "longCaptureParts": {
+    "message": "Pagina molto lunga: catturata in $1 parti, già nel documento."
+  },
+  "longSaveNow": {
+    "message": "Salva subito tutto in PDF"
+  },
+  "longReview": {
+    "message": "Rivedi le parti"
+  },
+  "areaCapture": {
+    "message": "Cattura"
+  },
+  "areaCancel": {
+    "message": "Annulla"
+  },
+  "areaAdjustHint": {
+    "message": "Trascina i bordi o l'area · scorri la pagina per allungarla · Invio per catturare"
+  },
+  "resumeCapture": {
+    "message": "Continua da qui"
+  },
+  "resumeGone": {
+    "message": "Non trovo più la pagina com'era: riaprila e cattura di nuovo."
+  },
+  "resumedParts": {
+    "message": "Ripresa: altre $1 parti aggiunte al documento."
+  },
+  "resumedPartsOne": {
+    "message": "Ripresa: un'altra parte aggiunta al documento."
+  }
+}

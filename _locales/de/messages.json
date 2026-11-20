@@ -1,0 +1,857 @@
+{
+  "extName": {
+    "message": "Picantex – Screenshot ganze Seite, Annotationen & PDF"
+  },
+  "extDescription": {
+    "message": "Screenshot ganze Seite, Bereich, Element. Annotieren, verpixeln, als PNG, JPEG, durchsuchbares PDF speichern. Öffnet PDFs. Lokal."
+  },
+  "actionTitle": {
+    "message": "Picantex: Screenshot erfassen"
+  },
+  "menuVisible": {
+    "message": "Sichtbaren Bereich erfassen"
+  },
+  "menuSelection": {
+    "message": "Auswahl erfassen"
+  },
+  "menuElement": {
+    "message": "Ein Element erfassen"
+  },
+  "menuFull": {
+    "message": "Ganze Seite erfassen"
+  },
+  "popupVisible": {
+    "message": "Sichtbarer Bereich"
+  },
+  "popupSelection": {
+    "message": "Auswahl"
+  },
+  "popupElement": {
+    "message": "Element"
+  },
+  "popupFull": {
+    "message": "Ganze Seite"
+  },
+  "popupPanels": {
+    "message": "Innere Abschnitte mitscrollen"
+  },
+  "popupPanelsTitle": {
+    "message": "Für Web-Apps, bei denen die Seite stillsteht und ein Abschnitt darin scrollt: Ist der Schalter an, erfassen „Ganze Seite“ und „Element“ diesen Abschnitt vollständig"
+  },
+  "popupStop": {
+    "message": "Aufnahme stoppen"
+  },
+  "popupStopFull": {
+    "message": "Der schon erfasste Teil bleibt erhalten. Esc auf der Seite geht auch"
+  },
+  "popupStopDelayed": {
+    "message": "Countdown abbrechen. Esc auf der Seite geht auch"
+  },
+  "actionStopTitle": {
+    "message": "Picantex: Aufnahme läuft. Drücke Esc auf der Seite, um sie zu stoppen"
+  },
+  "noteStopped": {
+    "message": "Aufnahme gestoppt: Hier ist der bis dahin erfasste Teil."
+  },
+  "popupOpenApp": {
+    "message": "Picantex öffnen"
+  },
+  "popupOpenAppTitle": {
+    "message": "Öffnet Picantex, ohne etwas zu erfassen: Von dort aus öffnest du ein Bild oder PDF vom Computer, das mehrseitige Dokument und deine anderen Arbeiten"
+  },
+  "openMenu": {
+    "message": "Öffnen"
+  },
+  "openMenuTitle": {
+    "message": "Ein Bild oder PDF vom Computer öffnen oder das mehrseitige Dokument"
+  },
+  "openFile": {
+    "message": "Bild oder PDF vom Computer…"
+  },
+  "openDocument": {
+    "message": "Mehrseitiges Dokument"
+  },
+  "verifyTitle": {
+    "message": "Prüfwerkzeuge: Fingerabdruck und Stempel gespeicherter Dateien"
+  },
+  "verifyOn": {
+    "message": "Prüfwerkzeuge"
+  },
+  "stampOn": {
+    "message": "Stempel unter dem Bild"
+  },
+  "propsWidth": {
+    "message": "Strichstärke"
+  },
+  "propsStrength": {
+    "message": "Intensität"
+  },
+  "propsSize": {
+    "message": "Größe"
+  },
+  "propsStepContent": {
+    "message": "Inhalt und Ebene"
+  },
+  "colorsTitle": {
+    "message": "Farbe: Schnellfarben, jede andere Farbe, ihr Code und die Pipette"
+  },
+  "popupVerifyTitle": {
+    "message": "Zeigt nach jedem Speichern den SHA-256-Fingerabdruck der Datei, mit dem jeder prüfen kann, dass sie nicht verändert wurde, und lässt dich einen Stempel hinzufügen: vollständige Adresse der Seite (aus dem Internet gespeichert oder vom Gerät geladen), Titel, Datum und Uhrzeit"
+  },
+  "stampTitle": {
+    "message": "Fügt unter dem Bild einen Streifen mit der vollständigen Adresse der Seite (aus dem Internet gespeichert oder vom Gerät geladen) sowie Datum und Uhrzeit der Aufnahme hinzu, nach der Uhr dieses Computers. Schreibt vollständige Adresse, Titel, Datum und Uhrzeit in die Dateieigenschaften. Gilt für alles, was aus diesem Tab gespeichert wird, auch für das PDF des Dokuments"
+  },
+  "stampCaptured": {
+    "message": "Erfasst am $1"
+  },
+  "stampOpened": {
+    "message": "Geöffnet am $1"
+  },
+  "fpTitle": {
+    "message": "Fingerabdruck der Datei (SHA-256)"
+  },
+  "fpCopy": {
+    "message": "Kopieren"
+  },
+  "fpCopied": {
+    "message": "Kopiert"
+  },
+  "fpSave": {
+    "message": "Fingerabdruck speichern…"
+  },
+  "fpSaveTitle": {
+    "message": "Speichert eine kleine .sha256-Datei, die du im selben Ordner wie die Datei aufbewahrst: Die Werkzeuge des Systems können sie prüfen, zum Beispiel sha256sum -c"
+  },
+  "fpCaptured": {
+    "message": "Erfasst am $1"
+  },
+  "fpSaved": {
+    "message": "Gespeichert am $1"
+  },
+  "vfOpenMenu": {
+    "message": "Datei prüfen…"
+  },
+  "vfTitle": {
+    "message": "Datei prüfen"
+  },
+  "vfLead": {
+    "message": "Prüfe, ob eine Datei noch genau so ist wie zu dem Zeitpunkt, als ihr Fingerabdruck berechnet wurde. Alles geschieht auf deinem Computer: Die Datei geht nirgendwohin."
+  },
+  "vfDrop": {
+    "message": "Zieh die Datei und ihre .sha256 hierher oder wähle sie aus. Du kannst mehrere auf einmal prüfen."
+  },
+  "vfChoose": {
+    "message": "Dateien auswählen…"
+  },
+  "vfPaste": {
+    "message": "Oder füge den Fingerabdruck ein, mit dem verglichen werden soll:"
+  },
+  "vfBadPaste": {
+    "message": "Das ist kein SHA-256-Fingerabdruck: Er besteht aus 64 Zeichen, Ziffern und Buchstaben von a bis f."
+  },
+  "vfIndependent": {
+    "message": "Für eine Prüfung, die nicht von Picantex abhängt, nutze die Werkzeuge des Systems: sha256sum -c unter Linux, shasum -a 256 -c auf dem Mac, Get-FileHash unter Windows."
+  },
+  "vfComputing": {
+    "message": "Fingerabdruck wird berechnet…"
+  },
+  "vfComputed": {
+    "message": "Fingerabdruck der Datei:"
+  },
+  "vfExpected": {
+    "message": "Erwarteter Fingerabdruck:"
+  },
+  "vfSame": {
+    "message": "Identisch: Der Fingerabdruck stimmt überein."
+  },
+  "vfDifferent": {
+    "message": "Verschieden: Das ist nicht die Datei zu diesem Fingerabdruck."
+  },
+  "vfNoReference": {
+    "message": "Kein Fingerabdruck zum Vergleichen. Hier ist er, falls du ihn kopieren möchtest."
+  },
+  "vfMissing": {
+    "message": "In der .sha256-Datei aufgeführt, aber nicht ausgewählt."
+  },
+  "helpTitle": {
+    "message": "Picantex-Hilfe"
+  },
+  "helpContents": {
+    "message": "Inhalt"
+  },
+  "helpLink": {
+    "message": "? Hilfe"
+  },
+  "helpMore": {
+    "message": "Mehr erfahren"
+  },
+  "helpWhat": {
+    "message": "Was ist das?"
+  },
+  "hintPanels": {
+    "message": "Für Web-Apps, bei denen die Seite stillsteht und nur ein Teil scrollt, etwa ein Posteingang oder ein Chat: Ist der Schalter an, erfassen „Ganze Seite“ und „Element“ diesen Teil vollständig."
+  },
+  "hintVerify": {
+    "message": "Der Fingerabdruck beweist, dass sich die Datei seit dem Speichern nicht verändert hat; der Stempel sagt, woher das Bild stammt und wann es erfasst wurde. Sie bescheinigen nicht, dass der Inhalt wahr ist."
+  },
+  "hintStep": {
+    "message": "Schritte nummerieren sich selbst in der Reihenfolge, in der du sie setzt. Umschalt+Klick setzt einen Unterschritt (1.1, 1.2…)."
+  },
+  "hintEraser": {
+    "message": "Der Radierer malt mit der Hintergrundfarbe. Um sensible Daten zu verbergen, ist das Werkzeug „Abdeckung“ sicherer."
+  },
+  "hintDocument": {
+    "message": "Fasst mehrere Bilder in einem einzigen durchsuchbaren PDF zusammen. Zieh die Seiten, um sie neu anzuordnen; ein Doppelklick öffnet eine Seite wieder im Editor."
+  },
+  "purgeButton": {
+    "message": "Speicher jetzt leeren"
+  },
+  "purgeAsk": {
+    "message": "Alle Aufnahmen im Speicher sofort löschen? Sie lassen sich nicht wiederherstellen. Die Seiten des Dokuments bleiben, und Bilder, die schon im Editor offen sind, bleiben, bis du ihren Tab schließt."
+  },
+  "purgeYes": {
+    "message": "Leeren"
+  },
+  "purgeNo": {
+    "message": "Abbrechen"
+  },
+  "purgeDone": {
+    "message": "Speicher geleert (gelöschte Aufnahmen: $1)."
+  },
+  "purgeEmpty": {
+    "message": "Der Speicher war bereits leer."
+  },
+  "popupDelay": {
+    "message": "Verzögerung"
+  },
+  "popupRestricted": {
+    "message": "Auf dieser Seite erlaubt Chrome nur den sichtbaren Bereich."
+  },
+  "popupDelayTitle": {
+    "message": "Erfasst den sichtbaren Bereich nach ein paar Sekunden. Für Menüs und Hinweise, die sich schließen, wenn du woanders klickst: Öffne sie auf der Seite, bevor die Zeit abläuft"
+  },
+  "selectionHint": {
+    "message": "Ziehen, um den Bereich auszuwählen · Umschalt oder Strg: anpassbarer Bereich · Esc zum Abbrechen"
+  },
+  "elementHint": {
+    "message": "Klicke auf das Element, das du erfassen willst · ↑ oder Mausrad zum Erweitern · Esc zum Abbrechen"
+  },
+  "noteSelectionBlocked": {
+    "message": "Chrome erlaubt auf dieser Seite keine Auswahl: Der sichtbare Bereich wurde erfasst, du kannst ihn hier zuschneiden."
+  },
+  "noteFullBlocked": {
+    "message": "Chrome erlaubt auf dieser Seite kein automatisches Scrollen: Nur der sichtbare Bereich wurde erfasst."
+  },
+  "noteTruncated": {
+    "message": "Sehr lange Seite: Nur der erste Teil wurde erfasst."
+  },
+  "notePanelsOff": {
+    "message": "Hier scrollt der Inhalt in einem Abschnitt der Seite, deshalb wurde nur ein Teil davon erfasst. Um alles zu erfassen, schalte im Picantex-Menü „Innere Abschnitte mitscrollen“ ein."
+  },
+  "errorTabChanged": {
+    "message": "Aufnahme unterbrochen, der Tab ist nicht mehr im Vordergrund."
+  },
+  "errorElementGone": {
+    "message": "das gewählte Element ist nicht mehr auf der Seite."
+  },
+  "errorCapture": {
+    "message": "Diese Seite konnte nicht erfasst werden: $1"
+  },
+  "errorNotFound": {
+    "message": "Screenshot nicht gefunden: Erfasse die Seite erneut."
+  },
+  "errorOpen": {
+    "message": "Der Screenshot konnte nicht geöffnet werden: $1"
+  },
+  "errorFailed": {
+    "message": "Vorgang fehlgeschlagen: $1"
+  },
+  "errorTooLarge": {
+    "message": "das Bild ist für dieses Format zu groß."
+  },
+  "errorDownload": {
+    "message": "der Download ist fehlgeschlagen."
+  },
+  "editorTitle": {
+    "message": "Screenshot-Editor"
+  },
+  "save": {
+    "message": "Speichern"
+  },
+  "saveTitle": {
+    "message": "Speichern: Name und Ordner wählen (Strg+S)"
+  },
+  "formatTitle": {
+    "message": "Dateiformat"
+  },
+  "copy": {
+    "message": "Kopieren"
+  },
+  "copyTitle": {
+    "message": "Bild in die Zwischenablage kopieren (Strg+Umschalt+C)"
+  },
+  "color": {
+    "message": "Farbe"
+  },
+  "colorRed": {
+    "message": "Rot"
+  },
+  "colorYellow": {
+    "message": "Gelb"
+  },
+  "colorGreen": {
+    "message": "Grün"
+  },
+  "colorBlue": {
+    "message": "Blau"
+  },
+  "colorBlack": {
+    "message": "Schwarz"
+  },
+  "colorWhite": {
+    "message": "Weiß"
+  },
+  "strokeTitle": {
+    "message": "Strichstärke (auch Intensität von Weichzeichner und Verpixeln sowie Größe des Radierers)"
+  },
+  "text": {
+    "message": "Text"
+  },
+  "fontSizeTitle": {
+    "message": "Textgröße"
+  },
+  "bold": {
+    "message": "Fett"
+  },
+  "boldLetter": {
+    "message": "F"
+  },
+  "italic": {
+    "message": "Kursiv"
+  },
+  "italicLetter": {
+    "message": "K"
+  },
+  "undoTitle": {
+    "message": "Rückgängig (Strg+Z)"
+  },
+  "redoTitle": {
+    "message": "Wiederholen (Strg+Y)"
+  },
+  "deleteTitle": {
+    "message": "Ausgewähltes Objekt löschen (Entf)"
+  },
+  "toolSelect": {
+    "message": "Auswählen, verschieben und Größe ändern"
+  },
+  "toolCrop": {
+    "message": "Zuschneiden"
+  },
+  "toolEraser": {
+    "message": "Radierer: Klicke oder ziehe über das Bild, um wegzuradieren, was darunter liegt"
+  },
+  "toolRect": {
+    "message": "Rechteck (Umschalt: Quadrat)"
+  },
+  "toolEllipse": {
+    "message": "Kreis / Ellipse (Umschalt: Kreis)"
+  },
+  "toolLine": {
+    "message": "Linie (Umschalt: 45°-Winkel)"
+  },
+  "toolArrow": {
+    "message": "Pfeil (Umschalt: 45°-Winkel)"
+  },
+  "toolPen": {
+    "message": "Stift: freihand zeichnen"
+  },
+  "toolBubble": {
+    "message": "Sprechblase"
+  },
+  "toolStep": {
+    "message": "Nummerierter Schritt: Die Nummern folgen der Reihenfolge, in der du sie setzt. Umschalt+Klick für einen Unterschritt (1.1, 1.2…)"
+  },
+  "stepStyleTitle": {
+    "message": "Inhalt des Schritts: Zahlen, Buchstaben, römische Zahlen, ein Symbol oder ein eigener Text"
+  },
+  "stepCustom": {
+    "message": "Text…"
+  },
+  "stepLabelTitle": {
+    "message": "Der Text des Schritts (höchstens 6 Zeichen)"
+  },
+  "stepSubTitle": {
+    "message": "Unterschritt: kleiner, nummeriert innerhalb des vorherigen Schritts (1.1, 1.2…). Auch mit Umschalt+Klick"
+  },
+  "toolHighlight": {
+    "message": "Textmarker"
+  },
+  "toolBlur": {
+    "message": "Weichzeichner"
+  },
+  "toolPixel": {
+    "message": "Verpixeln"
+  },
+  "toolCover": {
+    "message": "Abdeckung: der sicherste Weg, Daten zu verbergen"
+  },
+  "toolPageText": {
+    "message": "Seitentext kopieren: Ziehe über den Bereich, den du brauchst"
+  },
+  "toolPageTextNone": {
+    "message": "Für dieses Bild ist der Seitentext nicht verfügbar"
+  },
+  "cropApply": {
+    "message": "✓ Anwenden"
+  },
+  "cropApplyTitle": {
+    "message": "Zuschnitt anwenden (Eingabetaste)"
+  },
+  "cropCancelTitle": {
+    "message": "Zuschnitt abbrechen (Esc)"
+  },
+  "cropHint": {
+    "message": "Ziehe den Bereich, der bleiben soll, und drücke dann die Eingabetaste oder „Anwenden“"
+  },
+  "menuCopy": {
+    "message": "Bild kopieren"
+  },
+  "menuCopyText": {
+    "message": "Gesamten Text kopieren"
+  },
+  "menuCopyObject": {
+    "message": "Objekt kopieren"
+  },
+  "menuPasteObject": {
+    "message": "Objekt einfügen"
+  },
+  "menuDelete": {
+    "message": "Objekt löschen"
+  },
+  "menuFront": {
+    "message": "In den Vordergrund"
+  },
+  "menuForward": {
+    "message": "Eine Ebene nach vorne"
+  },
+  "menuBackward": {
+    "message": "Eine Ebene nach hinten"
+  },
+  "menuBack": {
+    "message": "In den Hintergrund"
+  },
+  "preparing": {
+    "message": "Datei wird vorbereitet…"
+  },
+  "copying": {
+    "message": "Wird kopiert…"
+  },
+  "copied": {
+    "message": "Bild in die Zwischenablage kopiert"
+  },
+  "objectCopied": {
+    "message": "Objekt kopiert. Strg+V fügt es ein, Strg+Umschalt+C kopiert das Bild"
+  },
+  "objectCut": {
+    "message": "Objekt ausgeschnitten. Strg+V fügt es ein"
+  },
+  "textCopied": {
+    "message": "Text kopiert: $1"
+  },
+  "textNone": {
+    "message": "In diesem Bereich gibt es keinen Seitentext"
+  },
+  "textHint": {
+    "message": "Ziehe über den Bereich, dessen Text du kopieren möchtest"
+  },
+  "saved": {
+    "message": "Datei gespeichert"
+  },
+  "saveCancelled": {
+    "message": "Speichern abgebrochen"
+  },
+  "languageTitle": {
+    "message": "Sprache (Auto folgt dem Browser)"
+  },
+  "languageAuto": {
+    "message": "Auto"
+  },
+  "openPrompt": {
+    "message": "Zieh ein Bild oder ein PDF hierher, füge ein Bild ein (Strg+V) oder wähle eine Datei"
+  },
+  "openChoose": {
+    "message": "Datei auswählen"
+  },
+  "errorImage": {
+    "message": "Das ist kein Bild, das Picantex öffnen kann"
+  },
+  "zoomTitle": {
+    "message": "Bildzoom: an die Breite anpassen, ganz zeigen oder ein Prozentwert (Strg + Mausrad oder die Tasten + und −)"
+  },
+  "zoomWidth": {
+    "message": "Breite"
+  },
+  "zoomPage": {
+    "message": "Ganz"
+  },
+  "toolPicker": {
+    "message": "Pipette: eine Farbe aus dem Bild aufnehmen"
+  },
+  "hexTitle": {
+    "message": "Farbcode: #rrggbb oder #rrggbbaa für Transparenz (die letzten zwei Stellen)"
+  },
+  "printTitle": {
+    "message": "Bild drucken (Strg+P)"
+  },
+  "docButtonTitle": {
+    "message": "Mehrseitiges Dokument ein-/ausschalten: mehrere Bilder in einem einzigen PDF sammeln"
+  },
+  "popupDocument": {
+    "message": "Dokument öffnen"
+  },
+  "docTitle": {
+    "message": "Dokument"
+  },
+  "docPagesOne": {
+    "message": "1 Seite"
+  },
+  "docPagesMany": {
+    "message": "$1 Seiten"
+  },
+  "docEmpty": {
+    "message": "Noch keine Seiten. Füge das Bild hinzu, das du im Editor hast, oder wähle Bilder von deinem Computer aus oder zieh sie hierher."
+  },
+  "docAdd": {
+    "message": "Dieses Bild hinzufügen"
+  },
+  "docLayout": {
+    "message": "Seitengröße"
+  },
+  "docOriginal": {
+    "message": "Original"
+  },
+  "docLayoutTitle": {
+    "message": "Original: Jede Seite ist so groß wie ihr Bild. A4: Die Bilder werden an das Blatt angepasst, lange gehen auf den folgenden Blättern weiter"
+  },
+  "docSave": {
+    "message": "PDF speichern"
+  },
+  "docPrint": {
+    "message": "Drucken"
+  },
+  "docClear": {
+    "message": "Dokument leeren"
+  },
+  "docClearAsk": {
+    "message": "Alle Seiten des Dokuments löschen?"
+  },
+  "docClearYes": {
+    "message": "Ja, leeren"
+  },
+  "docClearNo": {
+    "message": "Abbrechen"
+  },
+  "docCloseTitle": {
+    "message": "Dokumentbereich schließen"
+  },
+  "docRemoveTitle": {
+    "message": "Diese Seite entfernen"
+  },
+  "docDragTitle": {
+    "message": "Nach oben oder unten ziehen, um die Reihenfolge zu ändern; auf die Arbeitsfläche ziehen oder doppelklicken, um die Seite wieder im Editor zu öffnen"
+  },
+  "docAdding": {
+    "message": "Wird zum Dokument hinzugefügt…"
+  },
+  "docAdded": {
+    "message": "Als Seite $1 zum Dokument hinzugefügt"
+  },
+  "docUpdatePage": {
+    "message": "Seite $1 aktualisieren"
+  },
+  "docPageUpdated": {
+    "message": "Seite $1 aktualisiert"
+  },
+  "docSaved": {
+    "message": "PDF gespeichert. Die Seiten bleiben im Dokument, bis du es leerst."
+  },
+  "docCleared": {
+    "message": "Dokument geleert"
+  },
+  "printing": {
+    "message": "Druck wird vorbereitet…"
+  },
+  "docAddFiles": {
+    "message": "Vom Computer hinzufügen…"
+  },
+  "docAddFilesTitle": {
+    "message": "Wähle ein oder mehrere gespeicherte Bilder: Sie werden in derselben Reihenfolge zu Seiten des Dokuments. Ein PDF öffnet sich separat, damit du seine Seiten auswählen kannst. Du kannst sie auch auf diesen Bereich ziehen"
+  },
+  "docFilesAdded": {
+    "message": "Zum Dokument hinzugefügte Bilder: $1"
+  },
+  "docFilesSkipped": {
+    "message": "nicht als Bild lesbare Dateien: $1"
+  },
+  "pdfTitle": {
+    "message": "PDF öffnen"
+  },
+  "pdfNoticeTitle": {
+    "message": "Wie Picantex PDFs öffnet"
+  },
+  "pdfNotice": {
+    "message": "Zum Lesen von PDFs nutzt Picantex PDF.js von Mozilla, den in Firefox eingebauten PDF-Betrachter: die einzige Komponente, die wir nicht selbst geschrieben haben. Er arbeitet auf deinem Computer, in einem abgeschlossenen Bereich: Er sieht nur das PDF, das du öffnest, nicht deine Aufnahmen oder deine Dokumente, und er kann keine Verbindung zum Internet herstellen. Er läuft nur, wenn du ein PDF öffnest."
+  },
+  "pdfNoticeOk": {
+    "message": "Verstanden"
+  },
+  "pdfChoosePrompt": {
+    "message": "Wähle ein PDF von deinem Computer oder zieh es hierher."
+  },
+  "pdfChoose": {
+    "message": "PDF auswählen"
+  },
+  "pdfLoading": {
+    "message": "PDF wird geöffnet…"
+  },
+  "pdfError": {
+    "message": "Diese Datei lässt sich nicht als PDF öffnen: Vielleicht ist sie beschädigt oder gar kein PDF."
+  },
+  "pdfPassword": {
+    "message": "Dieses PDF ist durch ein Passwort geschützt:"
+  },
+  "pdfPasswordOpen": {
+    "message": "Öffnen"
+  },
+  "pdfPasswordWrong": {
+    "message": "Falsches Passwort: Versuch es noch einmal."
+  },
+  "pdfHint": {
+    "message": "Klicke, um Seiten auszuwählen (Umschalt+Klick für einen Bereich); ein Doppelklick öffnet eine Seite im Editor."
+  },
+  "pdfPagesOne": {
+    "message": "1 Seite"
+  },
+  "pdfPagesMany": {
+    "message": "$1 Seiten"
+  },
+  "pdfChosenOne": {
+    "message": "1 ausgewählt"
+  },
+  "pdfChosen": {
+    "message": "$1 ausgewählt"
+  },
+  "pdfAll": {
+    "message": "Alle"
+  },
+  "pdfNone": {
+    "message": "Keine"
+  },
+  "pdfOpenEditor": {
+    "message": "Im Editor öffnen"
+  },
+  "pdfOpenEditorTitle": {
+    "message": "Jede ausgewählte Seite öffnet sich im Editor, in einem eigenen Tab, mit ihrem Text zum Kopieren (höchstens 10)"
+  },
+  "pdfTooMany": {
+    "message": "Der Editor öffnet höchstens 10 Seiten auf einmal: Für alle anderen gibt es das Dokument"
+  },
+  "pdfAddDocument": {
+    "message": "Zum Dokument hinzufügen"
+  },
+  "pdfAddDocumentTitle": {
+    "message": "Die ausgewählten Seiten kommen mit ihrem Text ins mehrseitige Dokument"
+  },
+  "pdfPreparing": {
+    "message": "Seiten werden vorbereitet: $1 von $2…"
+  },
+  "pdfAddedDocument": {
+    "message": "Zum Dokument hinzugefügte Seiten: $1"
+  },
+  "pdfPageTitle": {
+    "message": "$1 – Seite $2"
+  },
+  "popupPdf": {
+    "message": "Dieses PDF in Picantex öffnen"
+  },
+  "popupPdfNote": {
+    "message": "Alle Seiten, mit kopierbarem Text"
+  },
+  "pdfCaptured": {
+    "message": "Das ist ein Bild des sichtbaren Teils des PDFs. Um alle Seiten und kopierbaren Text zu bekommen, öffne es mit Picantex."
+  },
+  "pdfOpenIt": {
+    "message": "PDF öffnen"
+  },
+  "pdfDownloading": {
+    "message": "PDF wird aus dem Tab geholt…"
+  },
+  "pdfDownloadFailed": {
+    "message": "Picantex kann „$1“ nicht noch einmal von der Website holen: Das passiert bei PDFs hinter einer Anmeldung oder solchen, die erst beim Aufruf erstellt werden. Speichere es mit der Download-Schaltfläche des PDF-Viewers von Chrome und wähle es dann hier aus."
+  },
+  "pdfLocalHint": {
+    "message": "„$1“ liegt auf deinem Computer, und Chrome lässt Erweiterungen keine Dateien lesen. Wähle es hier aus: Es öffnet sich sofort."
+  },
+  "popupImage": {
+    "message": "Dieses Bild in Picantex öffnen"
+  },
+  "popupImageNote": {
+    "message": "Das Original, in voller Auflösung"
+  },
+  "imageDownloading": {
+    "message": "Bild wird aus dem Tab geholt…"
+  },
+  "imageDownloadFailed": {
+    "message": "Picantex kann „$1“ nicht noch einmal von der Website holen. Speichere es auf deinem Computer und öffne es von hier aus."
+  },
+  "imageLocalHint": {
+    "message": "„$1“ liegt auf deinem Computer, und Chrome lässt Erweiterungen keine Dateien lesen: Wähle es oben aus oder zieh es hierher."
+  },
+  "pageNoteSiteOne": {
+    "message": "Eine Notiz auf dieser Website"
+  },
+  "pageNoteSiteMany": {
+    "message": "$1 Notizen auf dieser Website"
+  },
+  "pageNoteQuote": {
+    "message": "„$1“"
+  },
+  "pageNoteThisPage": {
+    "message": "Auf dieser Seite"
+  },
+  "pageNoteMore": {
+    "message": "Alle Notizen dieser Website ($1)…"
+  },
+  "pageNoteEmpty": {
+    "message": "(leer)"
+  },
+  "pageNotePlaceholder": {
+    "message": "Hier schreiben…"
+  },
+  "pageNoteDelete": {
+    "message": "Löschen"
+  },
+  "pageNoteDeleteAsk": {
+    "message": "Diese Notiz löschen?"
+  },
+  "pageNoteDeleteYes": {
+    "message": "Löschen"
+  },
+  "pageNoteDeleteNo": {
+    "message": "Nein"
+  },
+  "pageNoteExported": {
+    "message": "Am $1 aus Picantex exportiert."
+  },
+  "pageNoteExportPdf": {
+    "message": "PDF-Export"
+  },
+  "pageNoteExportMd": {
+    "message": "Markdown-Export"
+  },
+  "pageNoteFollowTitle": {
+    "message": "Randnotizen"
+  },
+  "pageNoteFollowOpen": {
+    "message": "Randnotizen: die Seitenleiste mit deinen Notizen, griffbereit, während du Seite, Website oder Tab wechselst"
+  },
+  "pageNoteFollowNew": {
+    "message": "Neue Notiz"
+  },
+  "pageNoteFollowFree": {
+    "message": "Die Notizen werden gelöscht, wenn du Chrome schließt: Exportiere sie, damit du sie nicht verlierst."
+  },
+  "pageNoteFollowIncognito": {
+    "message": "Im Inkognitomodus werden die Notizen gelöscht, wenn du das letzte Inkognitofenster schließt: Exportiere sie, damit du sie nicht verlierst."
+  },
+  "pageNoteFollowFrom": {
+    "message": "Quelle:"
+  },
+  "pageNoteFollowCopy": {
+    "message": "Kopieren"
+  },
+  "pageNoteFollowCopied": {
+    "message": "Kopiert"
+  },
+  "pageNoteFollowExportTitle": {
+    "message": "Randnotizen"
+  },
+  "pageNoteFollowTag": {
+    "message": "Randnotiz"
+  },
+  "pageNoteNoPage": {
+    "message": "Ohne Seite"
+  },
+  "pageNoteFollowNoneFree": {
+    "message": "Noch keine Notizen. Schreib eine mit „Neue Notiz“. Oder markiere auf einer Seite Text und drücke $1 oder mach einen Rechtsklick, Picantex › Randnotiz: Die Notiz zitiert den Text und merkt sich die Seite."
+  },
+  "pageNoteFollowNoneFreeNoKey": {
+    "message": "Noch keine Notizen. Schreib eine mit „Neue Notiz“. Oder markiere auf einer Seite Text und mach einen Rechtsklick, Picantex › Randnotiz: Die Notiz zitiert den Text und merkt sich die Seite."
+  },
+  "pageNoteSideCommand": {
+    "message": "Randnotiz in der Seitenleiste hinzufügen"
+  },
+  "pageNoteFollowLoose": {
+    "message": "Notiz ohne Seite. Für eine Notiz, die sich die Seite vor dir merkt: $1 oder Rechtsklick, Picantex › Randnotiz."
+  },
+  "pageNoteFollowLooseNoKey": {
+    "message": "Notiz ohne Seite. Für eine Notiz, die sich die Seite vor dir merkt: Rechtsklick, Picantex › Randnotiz."
+  },
+  "pageNoteFollowDeleteAll": {
+    "message": "Notizen löschen"
+  },
+  "pageNoteFollowDeleteAllAsk": {
+    "message": "Alle Randnotizen löschen ($1)? Sie lassen sich nicht wiederherstellen."
+  },
+  "pageNoteInPanel": {
+    "message": "Randnotiz"
+  },
+  "pageNoteOpenPanel": {
+    "message": "Zur Seitenleiste"
+  },
+  "pageNoteSide": {
+    "message": "Randnotiz"
+  },
+  "pageNoteSideTitle": {
+    "message": "Eine Randnotiz in der Seitenleiste: Sie zitiert markierten Text und merkt sich diese Seite"
+  },
+  "pageNoteUnexportedOne": {
+    "message": "1 Notiz noch nicht exportiert"
+  },
+  "pageNoteUnexportedMany": {
+    "message": "$1 Notizen noch nicht exportiert"
+  },
+  "pageNoteAllExported": {
+    "message": "Notizen exportiert. Du kannst sie so oft exportieren, wie du möchtest."
+  },
+  "longCaptureParts": {
+    "message": "Sehr lange Seite: in $1 Teilen erfasst, bereits im Dokument."
+  },
+  "longSaveNow": {
+    "message": "Jetzt alles als PDF speichern"
+  },
+  "longReview": {
+    "message": "Teile prüfen"
+  },
+  "areaCapture": {
+    "message": "Aufnehmen"
+  },
+  "areaCancel": {
+    "message": "Abbrechen"
+  },
+  "areaAdjustHint": {
+    "message": "Ränder oder Bereich ziehen · Seite scrollen, um ihn zu verlängern · Eingabe zum Aufnehmen"
+  },
+  "resumeCapture": {
+    "message": "Hier fortsetzen"
+  },
+  "resumeGone": {
+    "message": "Die Seite ist nicht mehr so geöffnet wie vorher: öffne sie erneut und nimm sie neu auf."
+  },
+  "resumedParts": {
+    "message": "Fortgesetzt: $1 weitere Teile zum Dokument hinzugefügt."
+  },
+  "resumedPartsOne": {
+    "message": "Fortgesetzt: ein weiterer Teil zum Dokument hinzugefügt."
+  }
+}

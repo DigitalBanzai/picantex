@@ -1,0 +1,66 @@
+/* Verifica di un file: stesso aspetto della pagina dei PDF */
+:root {
+  --bar: #33363b;
+  --bar-hover: #4b5058;
+  --line: #55595f;
+  --ink: #e8eaed;
+  --muted: #a9adb4;
+  --accent: #5ec26a;
+  --bad: #ff8a80;
+  --page: #1f2124;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body { margin: 0; min-height: 100vh; background: var(--page); color: var(--ink); font: 14px/1.45 system-ui, sans-serif; }
+
+#bar {
+  display: flex; align-items: center; gap: 10px; padding: 10px 18px;
+  background: var(--bar); border-bottom: 1px solid #1a1b1e;
+}
+h1 { margin: 0; font-size: 17px; }
+
+main { display: flex; flex-direction: column; gap: 16px; max-width: 820px; padding: 22px 18px 60px; }
+.lead { margin: 0; }
+.note { margin: 0; color: var(--muted); font-size: 13px; }
+.error { margin: -8px 0 0; color: var(--bad); font-size: 13px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 32px; padding: 0 12px;
+  border: 1px solid var(--line); border-radius: 6px; background: none; color: var(--ink); font: inherit;
+  cursor: pointer; white-space: nowrap;
+}
+.btn:hover { background: var(--bar-hover); }
+.btn.accent { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+/* Dove lasciare i file */
+#drop {
+  display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 28px 18px;
+  border: 2px dashed var(--line); border-radius: 12px; text-align: center;
+}
+#drop.over { border-color: var(--accent); background: #263329; }
+#drop p { margin: 0; color: var(--muted); }
+#drop svg { width: 40px; height: 40px; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+#paste { display: flex; flex-direction: column; gap: 6px; color: var(--muted); }
+#pasted {
+  height: 34px; padding: 0 10px; border: 1px solid var(--line); border-radius: 6px;
+  background: #26282c; color: var(--ink); font: 13px ui-monospace, "DejaVu Sans Mono", monospace;
+}
+#pasted:focus { outline: none; border-color: var(--accent); }
+
+/* Un risultato per file */
+#results { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
+#results li { display: grid; grid-template-columns: 34px 1fr; gap: 4px 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--bar); }
+#results .mark { grid-row: span 3; font-size: 24px; line-height: 1.1; text-align: center; }
+#results .name { font-weight: 600; overflow-wrap: anywhere; }
+#results .status { color: var(--muted); }
+#results li.same { border-color: var(--accent); }
+#results li.same .mark, #results li.same .status { color: var(--accent); }
+#results li.different { border-color: var(--bad); }
+#results li.different .mark, #results li.different .status { color: var(--bad); }
+#results .hashes { display: flex; flex-direction: column; gap: 4px; }
+#results code { font: 12px/1.5 ui-monospace, "DejaVu Sans Mono", monospace; color: var(--muted); overflow-wrap: anywhere; }
+#results code b { color: var(--ink); font-weight: normal; }
+#results .btn { grid-column: 2; justify-self: start; height: 28px; margin-top: 4px; }

@@ -1,0 +1,185 @@
+<!-- Picantex help, in English. Loaded by help.html; section ids are the same in every language. -->
+<section id="capture">
+  <h2>Capturing a page</h2>
+  <p>Click the Picantex icon in Chrome's toolbar and choose how to capture:</p>
+  <ul>
+    <li><b>Visible area</b>: what you see in the window right now.</li>
+    <li><b>Selection</b>: drag a rectangle over the page; only that part is captured. If you hold <kbd>Shift</kbd> or <kbd>Ctrl</kbd> while dragging, the rectangle stays on the page: you can move it, resize it from its handles and scroll the page to extend it beyond the screen (drag a handle near the edge and the page scrolls by itself). Then press <kbd>Enter</kbd> or <i>Capture</i>.</li>
+    <li><b>Element</b>: as you move the mouse, Picantex highlights the blocks of the page (an article, a table, a panel); click the one you need.</li>
+    <li><b>Full page</b>: Picantex scrolls the page from top to bottom and puts it back together as a single image. A very long page is captured in stages: each stage becomes a page of the <b>Document</b>, and at the end you choose whether to save it all as a PDF straight away or to review the parts first, for example to blur something.</li>
+  </ul>
+  <p>The same four captures are also in the right-click menu, under <b>Picantex</b>.</p>
+  <p><b>Chrome's own pages.</b> On Chrome's own pages (settings, extensions, new tab) and on the Chrome Web Store, Chrome lets no extension in: there you can capture only the visible area, also with a delay. The icon's menu says so and turns the other captures off.</p>
+  <p><b>Stopping a capture.</b> If a full page turns out to be too long, press <kbd>Esc</kbd> on the page, or click the Picantex icon (during the capture it shows the percentage in red, which also appears before the tab title) and choose <i>Stop the capture</i>: the editor opens with the part captured up to that moment. In the editor's notice, <i>Continue from here</i> resumes the page from where it stopped: the new parts are added to the Document. A countdown is cancelled the same way.</p>
+  <p><b>Visible area in 3, 5 or 10 seconds.</b> Some menus and tooltips close as soon as you click elsewhere. Choose a delay, open on the page what you want to photograph and wait: the capture starts by itself.</p>
+  <p><b>Scroll inner sections too.</b> In many web apps the page stays still and only a part of it scrolls, like an inbox or a chat. With this switch on, <i>Full page</i> and <i>Element</i> scroll that part and capture it in full. It stays on until you turn it off.</p>
+  <p><b>A PDF or an image open in a tab.</b> If you opened a PDF or an image directly in Chrome, the icon's menu offers to open it in Picantex: for a PDF you get every page with its text, for an image the original at full resolution. A plain capture would only photograph the visible part.</p>
+  <p><b>Without capturing anything.</b> <i>Open Picantex</i> opens the editor empty: from there you can open an image or a PDF from your computer, or drag it into the window. Pasting an image with <kbd>Ctrl</kbd>+<kbd>V</kbd> works too.</p>
+</section>
+
+<section id="annotate">
+  <h2>Annotating</h2>
+  <p>The tools are on the left. Those with a small triangle in the corner have options: when you choose one, a panel slides out next to its button and slips away as soon as you start drawing. When you click a mark with <b>Select</b> the panel comes back, and it stays open as long as the mark is selected. You can also reopen it by clicking the tool again.</p>
+  <ul>
+    <li><b>Select</b>: move, resize and delete marks (<kbd>Delete</kbd> key). When you select a mark, its tool's panel shows its options.</li>
+    <li><b>Crop</b>: drag the area to keep, then press <kbd>Enter</kbd> (<kbd>Esc</kbd> to cancel).</li>
+    <li><b>Eraser</b>: go over what you want to remove; it paints with the colour of the background around it.</li>
+    <li><b>Rectangle, ellipse, line, arrow</b>: hold <kbd>Shift</kbd> for squares, circles and 45° lines.</li>
+    <li><b>Pen</b>: freehand drawing.</li>
+    <li><b>Text</b>: click where you want to write. To confirm press <kbd>Esc</kbd>, <kbd>Ctrl</kbd>+<kbd>Enter</kbd> or click elsewhere.</li>
+    <li><b>Speech bubble</b>: a box with a tail, to drag towards what it is about.</li>
+    <li><b>Numbered steps</b>: they number themselves in the order you place them. In their panel you choose numbers, letters, Roman numerals, a symbol or a short text, step by step. <kbd>Shift</kbd>+click adds a sub-step (1.1, 1.2…); the <b>1.1</b> switch turns the selected step, and the next ones you place, into sub-steps.</li>
+    <li><b>Highlighter</b>: a see-through band over a line of text.</li>
+  </ul>
+  <p><b>The colour</b> is chosen from the rainbow circle at the bottom of the tools: in the middle you see the one in use. Inside are the quick colours, any other colour, its code (with transparency too, for example <code>#e5393580</code>) and the eyedropper, which picks a colour from the image.</p>
+  <p><b>Copying a mark.</b> Select a mark and press <kbd>Ctrl</kbd>+<kbd>C</kbd>, then <kbd>Ctrl</kbd>+<kbd>V</kbd>: it pastes into another capture too. Right-clicking the image offers the same commands.</p>
+  <p><b>Above or below.</b> Each mark lies above the ones drawn before it. Right-click a mark and choose <i>Bring to front</i>, <i>Bring forward</i>, <i>Send backward</i> or <i>Send to back</i>; from the keyboard, <kbd>Ctrl</kbd>+<kbd>↑</kbd> and <kbd>Ctrl</kbd>+<kbd>↓</kbd>, with <kbd>Shift</kbd> all the way to the top or bottom. Numbered steps keep their number. Blur and pixelation always stay below the other marks.</p>
+</section>
+
+<section id="hide">
+  <h2>Hiding data</h2>
+  <p>Before sharing a screenshot there is often something to hide: a name, an email address, an account number.</p>
+  <ul>
+    <li><b>Blur</b> and <b>pixelate</b> make an area unreadable, while showing that something was there.</li>
+    <li><b>Solid cover</b> is a filled rectangle, in the colour you choose.</li>
+  </ul>
+  <p><b>The honest advice: for truly sensitive data, use the solid cover.</b> Light blurs and pixelations can sometimes be reconstructed with dedicated software. A solid cover cannot: nothing is left underneath.</p>
+  <p>In the PDFs Picantex saves, text hidden with these tools (or with the eraser) is also removed from the searchable text (see the next section): it cannot be found by copying.</p>
+</section>
+
+<section id="text">
+  <h2>The real text and the searchable PDF</h2>
+  <p>When you capture a web page, Picantex keeps not only the image but also the text the page was showing. This brings two advantages:</p>
+  <ul>
+    <li><b>Copying the text of an area</b>: with the last tool in the column, above the colour circle, you drag over an area of the image and its text goes to the clipboard, ready to paste. It is the page's real text, not recognised from the image: no reading mistakes, and tables keep their columns.</li>
+    <li><b>Searchable PDF</b>: in the PDFs you save, the real text lies invisibly over the image. You can search and copy it in any PDF reader.</li>
+  </ul>
+  <p>Text that was covered, blurred, pixelated or erased is left out (it is no longer available for anything else).</p>
+  <p>The text tool works on captures of web pages and on pages of PDFs opened with Picantex. An ordinary image from your computer has no text to copy.</p>
+</section>
+
+<section id="save">
+  <h2>Saving, copying, printing</h2>
+  <ul>
+    <li><b>Save</b> (<kbd>Ctrl</kbd>+<kbd>S</kbd>) in the format chosen next to it: PNG, JPEG or PDF. Picantex always asks where to save.</li>
+    <li><b>Copy</b> (<kbd>Ctrl</kbd>+<kbd>C</kbd> with no mark selected) puts the image on the clipboard, to paste into an email or a document.</li>
+    <li><b>Print</b> (<kbd>Ctrl</kbd>+<kbd>P</kbd>) prints the image on A4 sheets; a long capture continues over several sheets.</li>
+  </ul>
+</section>
+
+<section id="document">
+  <h2>The multi-page document</h2>
+  <p>The document gathers several images into a single PDF.</p>
+  <ul>
+    <li>The document button, at the top, shows how many pages it holds and opens its panel on the right.</li>
+    <li><b>Add this image</b> puts the editor's image into the document as it is, with its annotations.</li>
+    <li>You can also add images or PDFs from your computer, or drag them onto the panel.</li>
+    <li>Drag the pages to change their order.</li>
+    <li>To fix a page, double-click it or drag it onto the image: it reopens in the editor, and when you add it again it replaces the old one.</li>
+    <li><b>Save PDF</b> creates a single searchable PDF, at the original size or on A4 sheets. <b>Print</b> sends it to the printer.</li>
+  </ul>
+  <p>The pages stay on your computer until you empty the document, even if you close Chrome.</p>
+</section>
+
+<section id="pdf">
+  <h2>Opening a PDF</h2>
+  <p>Open a PDF from your computer (<i>Open ▾ → Image or PDF from the computer</i>), by dragging it into the window, or from the Chrome tab where it is open.</p>
+  <ul>
+    <li>The pages appear as thumbnails: click the ones you need (<kbd>Shift</kbd>+click for a range, or <i>All</i>).</li>
+    <li><b>Open in the editor</b>, or a double-click on a thumbnail, brings a page into the editor, with its text, to annotate it.</li>
+    <li><b>Add to the document</b> puts the chosen pages into the multi-page document.</li>
+    <li>Password-protected PDFs work too (as long as you know the password).</li>
+  </ul>
+  <p>To read PDFs Picantex uses Mozilla's PDF.js, the only code that was not written for Picantex. It runs in an isolated page that cannot connect to the internet or see your data.</p>
+</section>
+
+<section id="notes">
+  <h2>Side notes</h2>
+  <p>A notebook for your research, in Chrome's side panel. The panel stays open while you change page, site or tab: you can copy from a page and paste into the note, or write while you read.</p>
+  <ul>
+    <li><b>Margin note</b>: on a page, select some text, then choose <i>Margin note</i> in the icon's menu, or right-click and choose <b>Picantex › Margin note</b>, or press <kbd>Alt</kbd>+<kbd>M</kbd> (on a Mac <kbd>Option</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>). The panel opens with a new note that quotes the chosen text and remembers which page it comes from. When the panel opens, the cursor is already in the note and you can type straight away. If the panel was already open and you were working on the page, Chrome keeps the keyboard there: to type in the note without clicking it, press <kbd>F6</kbd> to move through the parts of the browser until you reach the note (usually two or three times). If you were typing in another note instead, the cursor moves to the new one by itself.</li>
+    <li><b>New note</b>, at the top of the panel, opens an empty one, with the cursor already in it. It remembers the page in front of you if you have already used Picantex there; otherwise it starts without a page.</li>
+    <li><b>From:</b> takes you back to the note's page. If the page is already open in a tab, it brings that tab to the front instead of opening another one.</li>
+    <li>Notes save themselves while you write; a note left empty disappears. <b>Copy</b> puts the text on the clipboard, <b>Delete</b> removes the note (after asking), <b>Delete notes</b>, at the bottom of the panel, removes them all.</li>
+    <li>On sites where you have notes, the Picantex icon has a yellow mark: one dot on a note's page, three small dots on the site's other pages. Click it and the menu lists that site's notes. The pin next to <i>Margin note</i> opens the panel.</li>
+  </ul>
+  <p><b>How long they last.</b> Notes are kept only in Chrome's memory, not on the disk, and are deleted when you quit Chrome. On a Mac closing the windows is not enough: Chrome stays open until you quit it with <kbd>Cmd</kbd>+<kbd>Q</kbd>. To keep them, export them: <b>Export PDF</b> creates a PDF with searchable text and links to the pages, <b>Export Markdown</b> a text file that opens anywhere, in apps like Obsidian too. At the top of the panel Picantex reminds you how many notes you have not exported yet.</p>
+  <p><b>In incognito.</b> If you allow Picantex to run in incognito (in Picantex's details, on Chrome's extensions page), the notes you take there stay separate: the panel of an incognito window shows only those, normal windows do not see them, and the icon does not mark sites. Once you close the last incognito window you will not find them again: if you need them, export them first.</p>
+</section>
+
+<section id="verify">
+  <h2>Verification tools</h2>
+  <p>The shield next to <b>Save</b> turns the verification tools on. They stay on, in the other tabs too, until you turn them off.</p>
+  <ul>
+    <li><b>The fingerprint.</b> After every save, the shield's menu shows the file's SHA-256 fingerprint: a string of 64 characters that changes completely if even a single dot of the file changes. You can copy it, or save it in a small <code>.sha256</code> file to keep in the same folder. To check a file later, the same menu has <b>Check a file…</b>: you drop the file and its <code>.sha256</code>, or paste the fingerprint, and Picantex answers <i>identical</i> or <i>different</i>. Whoever must not rely on Picantex can run the same check with the system's own tools: on Linux <code>sha256sum -c</code> and on Mac <code>shasum -a 256 -c</code> read the <code>.sha256</code> file and answer "OK"; on Windows <code>Get-FileHash</code> computes the fingerprint to compare.</li>
+    <li><b>The stamp.</b> A strip is added under the image with the full address of the page, saved from the internet or loaded from the device, and the date and time of capture, with the time zone. The file's properties get the full address, the title, the date and the time; in PDFs the strip is also part of the searchable text. In the multi-page document each page has its own stamp. If you do not need the stamp for a save, turn it off from the same menu: this applies to this tab only, and the fingerprint remains.</li>
+  </ul>
+  <p><b>What they guarantee, and what they do not.</b> The fingerprint is like a seal on an envelope: it proves the file has not changed since it was computed, but says nothing about its content. A web page can say something false, and the tool seals that too. The stamp is a statement by whoever collects: the time is your computer's. Full legal value needs a digital signature and a time stamp from a certified provider, which require the network.</p>
+  <p><b>Two tips for those collecting evidence:</b></p>
+  <ol>
+    <li>Save <b>a copy without annotations</b>, with stamp and fingerprint, and work on another copy. That way the seal covers what the page originally showed, not later changes.</li>
+    <li><b>Send the fingerprint to someone straight away</b>, for example by email to a colleague or to yourself. The mail server records a date that does not depend on your clock.</li>
+  </ol>
+  <p>With the tools off, Picantex writes nothing about where an image comes from, neither inside the files nor in the name it suggests for saving them: whoever shares a screenshot does not reveal its origin by mistake. With the tools on, the suggested name includes the site too.</p>
+</section>
+
+<section id="privacy">
+  <h2>Privacy</h2>
+  <p>Picantex works entirely on your computer.</p>
+  <ul>
+    <li>No account, no advertising, no analytics. Picantex does not connect to any service, its own or anyone else's. The only network request is the one you ask for, when you open in Picantex a PDF or an image shown in a tab: the file is downloaded again from the same site, as the tab would do.</li>
+    <li>It sees a page only when you click its icon or its right-click menu, or use the margin note shortcut, and only that tab.</li>
+    <li>It remembers four settings (the language, the inner-sections switch, whether you have read the notice about PDFs, whether the verification tools are on) and three interface conveniences: the last save format, the document's layout and whether its panel was open.</li>
+    <li>The only code not written for Picantex is Mozilla's PDF.js, isolated and without network access.</li>
+  </ul>
+  <p><b>Where your work stays.</b> Captures and document pages are kept in an internal Chrome storage on your computer, reserved for Picantex. It is a temporary holding place, not an archive to keep:</p>
+  <ul>
+    <li>annotations are not saved by themselves: if you close the editor tab without saving, Chrome asks you to confirm, but then they are lost;</li>
+    <li>captures older than 24 hours are deleted automatically, at the next capture, when you open something in Picantex or when you restart Chrome;</li>
+    <li>what is deleted cannot be recovered, and uninstalling Picantex removes the storage, document included.</li>
+  </ul>
+  <p><b>Side notes</b>, instead, are kept only in Chrome's memory and are deleted when you quit Chrome. <b>In incognito</b>, if you allow it, Picantex works separately: the captures, document and notes of those windows stay only in memory and disappear with the incognito session.</p>
+  <p><b>Whatever you want to keep, save it</b> with "Save" in a folder or on a device of your choice. Picantex keeps no copy of the files you save. If you do not want to wait 24 hours, the button below empties the capture storage right away.</p>
+  <div class="purge"></div>
+  <p><b>What Picantex cannot prevent.</b> Some things depend on Chrome or on your computer, and they are worth knowing:</p>
+  <ul>
+    <li><b>Enhanced spell check.</b> If you have turned on enhanced spell check in Chrome's settings, under <i>Languages</i>, Chrome sends Google the text you type in any field, notes and editor texts included. Basic spell check, instead, works on your computer.</li>
+    <li><b>Updates.</b> Chrome updates Picantex by itself, and an update empties its memory. So that you do not lose your notes, during the update Picantex copies them to the disk and deletes the copy as soon as they are back in memory; Chrome may take a while to really clean up its files. Notes taken in incognito never go to the disk.</li>
+    <li><b>The mark on the icon.</b> It is Chrome that marks the sites where you have notes: to do so it keeps in its files the list of those pages' addresses, the same ones that are in your history, as long as the notes exist and at most until the next restart. In incognito the icon is not marked.</li>
+    <li><b>The last incognito window.</b> When you close it, Chrome shuts down the part of Picantex that works in incognito right away, without giving it time to delete the notes taken there. From then on you no longer see them, neither in incognito nor in normal windows, but they are still in Chrome's memory (never on the disk). They are gone for good at the first of these two things: if you open another incognito window, Picantex starts again and first of all deletes the notes of the closed session; if you quit Chrome, its memory is emptied and the notes with it.</li>
+    <li><b>Downloads.</b> The files you save appear in Chrome's download list, which remembers their name and folder; those saved in incognito, only while the incognito session stays open.</li>
+    <li><b>Your computer's memory.</b> As with any program, the operating system may copy memory to the disk, for example when the computer hibernates.</li>
+    <li><b>The rest, outside Picantex.</b> No extension controls other extensions with access to all sites, who else uses the same computer, or where the files you save and share end up.</li>
+  </ul>
+  <p>The full privacy policy is on the <a href="https://picantex.app/privacy.html" target="_blank" rel="noopener">Picantex website</a>.</p>
+</section>
+
+<section id="shortcuts">
+  <h2>Keyboard shortcuts</h2>
+  <table>
+    <thead><tr><th>Keys</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>S</kbd></td><td>Save</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>C</kbd></td><td>Copy the image (with a mark selected, copy the mark)</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></td><td>Copy the image, even with a mark selected</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>X</kbd></td><td>Cut the selected mark</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>V</kbd></td><td>Paste a mark, or open a copied image</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>P</kbd></td><td>Print the image</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td>Undo</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>Y</kbd> or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></td><td>Redo</td></tr>
+      <tr><td><kbd>Delete</kbd> or <kbd>Backspace</kbd></td><td>Delete the selected mark</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>↑</kbd> / <kbd>Ctrl</kbd>+<kbd>↓</kbd></td><td>Bring forward / send backward the selected mark (with <kbd>Shift</kbd>: to front / to back)</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Confirm the text, close a menu, clear the selection</td></tr>
+      <tr><td><kbd>Shift</kbd> or <kbd>Ctrl</kbd> while drawing a <i>Selection</i></td><td>The rectangle stays on the page: move it, resize it, scroll the page to extend it</td></tr>
+      <tr><td><kbd>Enter</kbd> on an adjustable selection</td><td>Capture the area, even if it is taller than the window</td></tr>
+      <tr><td><kbd>Esc</kbd> on the page, during a capture</td><td>Stop the capture in progress (a full page keeps the part already captured)</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Apply the crop</td></tr>
+      <tr><td><kbd>+</kbd> / <kbd>−</kbd> / <kbd>0</kbd></td><td>Zoom in / Zoom out / Actual size</td></tr>
+      <tr><td><kbd>Shift</kbd> while drawing</td><td>Squares, circles, 45° lines</td></tr>
+      <tr><td><kbd>Shift</kbd>+click with steps</td><td>A sub-step</td></tr>
+      <tr><td><kbd>Alt</kbd>+<kbd>M</kbd> on a page (on a Mac <kbd>Option</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>)</td><td>Margin note, in the side panel, with the selected text</td></tr>
+      <tr><td><kbd>F6</kbd>, more than once if needed</td><td>Moves the keyboard through the parts of the browser, up to the note in the panel</td></tr>
+    </tbody>
+  </table>
+  <p>On a Mac, use <kbd>Cmd</kbd> instead of <kbd>Ctrl</kbd>. The margin note shortcut can be changed on Chrome's extension shortcuts page.</p>
+</section>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="pdfTitle">Picantex</title>
+  <link rel="stylesheet" href="pdf-open.css">
+</head>
+<body>
+  <!-- I testi arrivano da _locales tramite gli attributi data-i18n (vedi i18n.js) -->
+  <header id="bar">
+    <img src="icons/icon32.png" alt="" width="24" height="24">
+    <h1 data-i18n="pdfTitle"></h1>
+    <span id="file-name"></span>
+    <button class="btn icon" data-action="info" data-i18n-title="pdfNoticeTitle">ⓘ</button>
+    <span class="spacer"></span>
+    <span id="count"></span>
+    <button class="btn" data-action="all" data-i18n="pdfAll" hidden></button>
+    <button class="btn" data-action="none" data-i18n="pdfNone" hidden></button>
+    <button class="btn" data-action="editor" data-i18n="pdfOpenEditor" data-i18n-title="pdfOpenEditorTitle" disabled></button>
+    <button class="btn" data-action="document" data-i18n="pdfAddDocument" data-i18n-title="pdfAddDocumentTitle" disabled></button>
+  </header>
+
+  <main>
+    <!-- Come lavora il lettore dei PDF: compare la prima volta, poi resta a portata di ⓘ -->
+    <section id="notice" hidden>
+      <h2 data-i18n="pdfNoticeTitle"></h2>
+      <p data-i18n="pdfNotice"></p>
+      <button class="btn accent" data-action="notice-ok" data-i18n="pdfNoticeOk"></button>
+    </section>
+
+    <!-- Nessun PDF ancora: lo si sceglie o lo si trascina qui -->
+    <section id="choose" hidden>
+      <svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 16.5h6"/></svg>
+      <p data-i18n="pdfChoosePrompt"></p>
+      <button class="btn accent" data-action="choose" data-i18n="pdfChoose"></button>
+    </section>
+    <input type="file" id="file" accept="application/pdf,.pdf,image/*" hidden>
+
+    <!-- PDF protetto da una password -->
+    <form id="password" hidden>
+      <label for="password-input" data-i18n="pdfPassword"></label>
+      <input type="password" id="password-input" autocomplete="off">
+      <button class="btn accent" data-i18n="pdfPasswordOpen"></button>
+      <p class="note" id="password-note"></p>
+    </form>
+
+    <p class="note" id="hint" data-i18n="pdfHint" hidden></p>
+    <ol id="pages"></ol>
+  </main>
+
+  <div id="toast" hidden></div>
+  <iframe id="reader" src="pdf-sandbox.html" title="PDF.js" hidden></iframe>
+
+  <script type="module" src="pdf-open.js"></script>
+</body>
+</html>

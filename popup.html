@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Picantex</title>
+  <style>
+    html { overflow: hidden; }
+    /* Senza questa regola lo stile dei pulsanti (display: flex) vincerebbe sull'attributo hidden */
+    [hidden] { display: none !important; }
+    body { margin: 0; padding: 8px; width: 268px; background: #33363b; font: 13px/1.3 system-ui, sans-serif; }
+    button {
+      display: flex; align-items: center; gap: 10px; width: 100%; padding: 9px 10px;
+      border: 0; border-radius: 6px; background: none; color: #e8eaed; font: inherit;
+      text-align: left; cursor: pointer;
+    }
+    button:hover, button:focus-visible { background: #4b5058; outline: none; }
+    svg {
+      width: 18px; height: 18px; flex: none; fill: none; stroke: #5ec26a;
+      stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+    }
+    /* I quattro modi di cattura, in una griglia di riquadri */
+    .modes { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 4px; }
+    .modes button {
+      flex-direction: column; justify-content: center; gap: 6px; padding: 12px 6px 10px;
+      border: 1px solid #4a4e55; border-radius: 8px; text-align: center;
+    }
+    .modes svg { width: 22px; height: 22px; }
+    /* Sulle pagine dove Chrome non lascia entrare le estensioni resta solo l'area visibile (vedi popup.js) */
+    .modes button:disabled { opacity: .4; cursor: default; background: none; }
+    #restricted { margin: 2px 4px 6px; color: #a9adb4; font-size: 12px; }
+    hr { margin: 6px 0; border: 0; border-top: 1px solid #4a4e55; }
+    /* Cattura ritardata: etichetta e un pulsantino per ogni durata */
+    .delay {
+      display: flex; align-items: center; gap: 5px; padding: 6px 2px 4px 10px; color: #e8eaed; white-space: nowrap;
+    }
+    .delay span { margin: 0 auto 0 4px; padding-right: 10px; }
+    .delay button { width: auto; padding: 4px 6px; border: 1px solid #55595f; }
+    /* Sopra un PDF aperto in Chrome: la voce che lo apre con Picantex, in evidenza */
+    .pdf { margin-bottom: 6px; border: 1px solid #5ec26a; }
+    .pdf span { display: flex; flex-direction: column; gap: 1px; }
+    .pdf small { color: #a9adb4; font-size: 12px; }
+    /* Numero di pagine già nel documento */
+    #pages {
+      margin-left: auto; min-width: 20px; padding: 1px 6px; border-radius: 10px;
+      background: #5ec26a; color: #0f3d17; font-size: 12px; text-align: center;
+    }
+    /* Opzione con interruttore: vale per Elemento e Pagina intera */
+    .option {
+      display: flex; align-items: center; gap: 10px; padding: 7px 10px; border-radius: 6px;
+      color: #e8eaed; cursor: pointer;
+    }
+    /* Durante una cattura il menu offre solo di fermarla */
+    body.capturing > :not(#stop) { display: none; }
+    #stop { border-color: #ff8a80; }
+    #stop svg { stroke: #ff8a80; }
+    footer { display: flex; align-items: center; justify-content: space-between; padding: 2px 4px 0 2px; color: #a9adb4; font-size: 12px; }
+    footer button { width: auto; padding: 5px 8px; color: #a9adb4; font-size: 12px; }
+    /* I «?» e la loro nuvoletta (vedi hint.js) */
+    .hint {
+      display: inline-grid; place-items: center; flex: none; width: 18px; height: 18px; padding: 0; margin: 0 4px;
+      border: 1px solid #6a6f77; border-radius: 50%; background: none; color: #a9adb4; font: 600 11px system-ui, sans-serif; cursor: pointer;
+    }
+    .hint:hover { border-color: #5ec26a; color: #5ec26a; background: none; }
+    .hint-bubble {
+      position: fixed; z-index: 50; width: 230px; padding: 10px 12px; border: 1px solid #55595f; border-radius: 8px;
+      background: #26282c; color: #e8eaed; font: 12px/1.45 system-ui, sans-serif; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+    .hint-bubble p { margin: 0 0 6px; }
+    .hint-bubble a { color: #5ec26a; }
+    .option:hover { background: #4b5058; }
+    .option span { margin-right: auto; padding-right: 14px; white-space: normal; }
+    .option input {
+      appearance: none; position: relative; flex: none; width: 30px; height: 16px; margin: 0;
+      border-radius: 8px; background: #6a6f77; cursor: pointer; transition: background 0.15s;
+    }
+    .option input::after {
+      content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px;
+      border-radius: 50%; background: #e8eaed; transition: left 0.15s;
+    }
+    .option input:checked { background: #5ec26a; }
+    .option input:checked::after { left: 16px; }
+    .option input:focus-visible { outline: 2px solid #e8eaed; outline-offset: 2px; }
+    /* <notes> */
+    /* Le note del sito aperto, in cima al menu, gialle come i foglietti */
+    #site-notes { margin-bottom: 6px; padding: 7px 4px 4px; border: 1px solid #c9b23a; border-radius: 8px; background: #3b3826; }
+    #site-notes-head { display: flex; align-items: center; gap: 6px; margin: 0 6px 3px; color: #fff59d; font-size: 12px; font-weight: 600; }
+    #site-notes-head svg { width: 15px; height: 15px; stroke: #fdd835; }
+    #site-notes-head span { flex: 1; }
+    #site-notes-head button { width: auto; padding: 2px 6px; color: #fff59d; font-size: 12px; font-weight: normal; }
+    #site-notes ol { margin: 0; padding: 0; list-style: none; }
+    #site-notes li button { display: block; padding: 5px 6px; }
+    #site-notes li b { display: block; font-weight: 600; overflow-wrap: anywhere; }
+    #site-notes li small {
+      display: block; overflow: hidden; color: #a9adb4; font-size: 11px; white-space: nowrap; text-overflow: ellipsis;
+    }
+    #site-notes .more { padding: 4px 6px; color: #fff59d; font-size: 12px; }
+    .note-row { display: flex; gap: 4px; }
+    .note-row svg { stroke: #fdd835; }
+    .note-row button:disabled { opacity: .4; cursor: default; background: none; }
+        .note-row [data-note-follow] { width: auto; padding: 9px 8px; }
+    /* </notes> */
+  </style>
+</head>
+<body data-page="popup">
+  <!-- notes -->
+  <!-- Le note di questo sito, se ce ne sono (vedi popup.js e note.js) -->
+  <section id="site-notes" hidden>
+    <p id="site-notes-head"><svg viewBox="0 0 24 24"><path d="M5 4h14v10l-6 6H5zM13 20v-6h6M8 9h8M8 12.5h5"/></svg><span></span><button id="site-notes-export" data-i18n="pageNoteOpenPanel" data-i18n-title="pageNoteFollowOpen"></button></p>
+    <ol id="site-notes-list"></ol>
+  </section>
+  <!-- /notes -->
+  <!-- Durante una cattura della pagina intera o un conto alla rovescia: si può solo fermarli (vedi popup.js) -->
+  <button class="pdf" id="stop" hidden>
+    <svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+    <span><b data-i18n="popupStop"></b><small id="stop-note"></small></span>
+  </button>
+  <!-- Compaiono solo sopra un PDF o un'immagine aperti direttamente in Chrome (vedi popup.js) -->
+  <button class="pdf" data-tab-file="pdf" hidden>
+    <svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 16.5h6"/></svg>
+    <span><b data-i18n="popupPdf"></b><small data-i18n="popupPdfNote"></small></span>
+  </button>
+  <button class="pdf" data-tab-file="image" hidden>
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5L5 20"/></svg>
+    <span><b data-i18n="popupImage"></b><small data-i18n="popupImageNote"></small></span>
+  </button>
+  <!-- I quattro modi di cattura: agiscono sulla pagina aperta -->
+  <div class="modes">
+    <button data-mode="visible">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/></svg>
+      <span data-i18n="popupVisible"></span>
+    </button>
+    <button data-mode="selection">
+      <svg viewBox="0 0 24 24"><path d="M4 9V5h4M16 5h4v4M20 15v4h-4M8 19H4v-4"/></svg>
+      <span data-i18n="popupSelection"></span>
+    </button>
+    <button data-mode="element">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5" stroke-dasharray="2.5 3"/><rect x="7.5" y="8.5" width="9" height="7" rx="1"/></svg>
+      <span data-i18n="popupElement"></span>
+    </button>
+    <button data-mode="full">
+      <svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="1.5"/><path d="M12 7v10M9.5 14.5L12 17l2.5-2.5"/></svg>
+      <span data-i18n="popupFull"></span>
+    </button>
+  </div>
+  <p id="restricted" data-i18n="popupRestricted" hidden></p>
+  <div class="delay" data-i18n-title="popupDelayTitle">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9.5 2.5h5"/></svg>
+    <span data-i18n="popupDelay"></span>
+    <button data-mode="delayed" data-seconds="3">3 s</button>
+    <button data-mode="delayed" data-seconds="5">5 s</button>
+    <button data-mode="delayed" data-seconds="10">10 s</button>
+  </div>
+  <label class="option" for="panels" data-i18n-title="popupPanelsTitle">
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M9 4v16M15 8.5v7M13 13.5l2 2 2-2M13 10.5l2-2 2 2"/></svg>
+    <span data-i18n="popupPanels"></span>
+    <button class="hint" data-hint="hintPanels" data-section="capture" data-i18n-title="helpWhat">?</button>
+    <input type="checkbox" id="panels">
+  </label>
+  <hr>
+  <!-- Picantex senza catturare nulla: dall'editor si aprono immagini, PDF, il documento e i dossier -->
+  <button data-open data-i18n-title="popupOpenAppTitle">
+    <svg viewBox="0 0 24 24"><path d="M3 7a1 1 0 0 1 1-1h5l2 2.5h9a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+    <span data-i18n="popupOpenApp"></span>
+    <b id="pages" hidden></b>
+  </button>
+  <!-- notes -->
+  <!-- Le note a fianco, nel pannello laterale: una nuova («Nota a margine») e il pannello (la spilletta) -->
+  <div class="note-row">
+    <button data-note-side data-i18n-title="pageNoteSideTitle">
+      <svg viewBox="0 0 24 24"><path d="M5 4h14v10l-6 6H5zM13 20v-6h6M8 9h8M8 12.5h5"/></svg>
+      <span data-i18n="pageNoteSide"></span>
+    </button>
+    <button data-note-follow data-i18n-title="pageNoteFollowOpen">
+      <svg viewBox="0 0 24 24"><path d="M9 3h6l-1 7 4 4H6l4-4zM12 14v7"/></svg>
+    </button>
+  </div>
+  <!-- /notes -->
+  <footer>
+    <button id="help-link"><span data-i18n="helpLink"></span></button>
+    <span id="version"></span>
+  </footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="editorTitle">Picantex</title>
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body class="editor">
+  <!-- I testi arrivano da _locales tramite gli attributi data-i18n (vedi i18n.js) -->
+  <header id="topbar">
+    <!-- In alto il file e la vista: salvarlo (con gli strumenti di verifica), aprire, copiare, stampare,
+         il documento a più pagine; poi annulla e ripeti, la misura e lo zoom -->
+    <div class="group">
+      <button class="btn accent" data-action="save" data-i18n-title="saveTitle">
+        <svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg><span data-i18n="save"></span>
+      </button>
+      <select id="format" data-i18n-title="formatTitle">
+        <option value="png">PNG</option>
+        <option value="jpeg">JPEG</option>
+        <option value="pdf">PDF</option>
+      </select>
+      <button class="btn icon" data-action="verify-menu" data-i18n-title="verifyTitle">
+        <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+      </button>
+    </div>
+
+    <div class="group">
+      <button class="btn" data-action="open-menu" data-i18n-title="openMenuTitle">
+        <svg viewBox="0 0 24 24"><path d="M3 7a1 1 0 0 1 1-1h5l2 2.5h9a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg><span data-i18n="openMenu"></span>
+        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <input type="file" id="file-input" accept="image/*,application/pdf,.pdf" hidden>
+      <button class="btn" data-action="copy" data-i18n-title="copyTitle">
+        <svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg><span data-i18n="copy"></span>
+      </button>
+      <button class="btn icon" data-action="print" data-i18n-title="printTitle">
+        <svg viewBox="0 0 24 24"><path d="M7 9V4h10v5M7 17H5a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2M7 14h10v6H7z"/></svg>
+      </button>
+      <button class="btn" data-action="doc-toggle" data-i18n-title="docButtonTitle">
+        <svg viewBox="0 0 24 24"><path d="M8 3h8l4 4v10H8zM16 3v4h4"/><path d="M8 7H4v14h12v-4"/></svg><span id="doc-count"></span>
+      </button>
+    </div>
+
+    <div class="group">
+      <button class="btn icon" data-action="undo" data-i18n-title="undoTitle">
+        <svg viewBox="0 0 24 24"><path d="M8 5L3 10l5 5"/><path d="M3 10h11a5.5 5.5 0 0 1 0 11h-4"/></svg>
+      </button>
+      <button class="btn icon" data-action="redo" data-i18n-title="redoTitle">
+        <svg viewBox="0 0 24 24"><path d="M16 5l5 5-5 5"/><path d="M21 10H10a5.5 5.5 0 0 0 0 11h4"/></svg>
+      </button>
+      <button class="btn icon" data-action="delete" data-i18n-title="deleteTitle">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg>
+      </button>
+    </div>
+
+    <span id="size-info"><span id="size-image"></span><span id="size-zoom"></span></span>
+    <select id="zoom" data-i18n-title="zoomTitle">
+      <option value="width" data-i18n="zoomWidth"></option>
+      <option value="page" data-i18n="zoomPage"></option>
+      <option value="0.25">25%</option>
+      <option value="0.5">50%</option>
+      <option value="0.75">75%</option>
+      <option value="1">100%</option>
+      <option value="1.5">150%</option>
+      <option value="2">200%</option>
+      <option value="3">300%</option>
+    </select>
+    <select id="language" data-i18n-title="languageTitle">
+      <option value="" data-i18n="languageAuto"></option>
+      <option value="de">Deutsch</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="it">Italiano</option>
+    </select>
+
+    <!-- Tendina «Apri»: un'immagine o un PDF dal computer, il documento, i dossier -->
+    <div class="dropdown" id="open-menu" hidden>
+      <button data-action="open">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5L5 20"/></svg><span data-i18n="openFile"></span>
+      </button>
+      <button data-action="doc-open">
+        <svg viewBox="0 0 24 24"><path d="M8 3h8l4 4v10H8zM16 3v4h4"/><path d="M8 7H4v14h12v-4"/></svg><span data-i18n="openDocument"></span><small id="open-doc-count"></small>
+      </button>
+    </div>
+
+    <!-- Tendina della verifica (vedi verify.js): gli interruttori e, dopo un salvataggio, l'impronta -->
+    <div class="dropdown" id="verify-menu" hidden>
+      <label class="switch" for="verify-on" data-i18n-title="popupVerifyTitle"><span><span data-i18n="verifyOn"></span><button class="hint" data-hint="hintVerify" data-section="verify" data-i18n-title="helpWhat">?</button></span><input type="checkbox" id="verify-on"></label>
+      <label class="switch" data-i18n-title="stampTitle"><span data-i18n="stampOn"></span><input type="checkbox" id="stamp-on"></label>
+      <button data-action="verify-file">
+        <svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 14l2 2 4-4.5"/></svg><span data-i18n="vfOpenMenu"></span>
+      </button>
+      <section id="fingerprint" hidden></section>
+    </div>
+  </header>
+
+  <div id="main">
+    <nav id="toolbar">
+      <button data-tool="select" data-i18n-title="toolSelect">
+        <svg viewBox="0 0 24 24"><path d="M5 3l14 9-6.5 1.5L10 20z"/></svg>
+      </button>
+      <button data-tool="crop" data-i18n-title="toolCrop">
+        <svg viewBox="0 0 24 24"><path d="M6 2v16h16"/><path d="M2 6h16v16"/></svg>
+      </button>
+      <button data-tool="eraser" data-i18n-title="toolEraser">
+        <svg viewBox="0 0 24 24"><rect x="2.5" y="8" width="19" height="9" rx="2" transform="rotate(-35 12 12.5)"/><path d="M9.2 9.8l5.2 7.4"/><path d="M13 21h8"/></svg>
+      </button>
+      <hr>
+      <button data-tool="rect" data-i18n-title="toolRect">
+        <svg viewBox="0 0 24 24"><rect x="3.5" y="6" width="17" height="12" rx="1"/></svg>
+      </button>
+      <button data-tool="ellipse" data-i18n-title="toolEllipse">
+        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="6.5"/></svg>
+      </button>
+      <button data-tool="line" data-i18n-title="toolLine">
+        <svg viewBox="0 0 24 24"><path d="M5 19L19 5"/></svg>
+      </button>
+      <button data-tool="arrow" data-i18n-title="toolArrow">
+        <svg viewBox="0 0 24 24"><path d="M5 19L19 5M10 5h9v9"/></svg>
+      </button>
+      <button data-tool="pen" data-i18n-title="toolPen">
+        <svg viewBox="0 0 24 24"><path d="M3 17c2-7 5-10 7-7s-2 8 1 8 4-8 7-9 2 2 3 4"/></svg>
+      </button>
+      <hr>
+      <button data-tool="text" data-i18n-title="text">
+        <svg viewBox="0 0 24 24"><path d="M5 7V4h14v3M12 4v16M9 20h6"/></svg>
+      </button>
+      <button data-tool="bubble" data-i18n-title="toolBubble">
+        <svg viewBox="0 0 24 24"><path d="M4 4.5h16v11H11l-4.5 4v-4H4z"/></svg>
+      </button>
+      <button data-tool="step" data-i18n-title="toolStep">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10.5 9.5l2-1.5v8.5"/></svg>
+      </button>
+      <hr>
+      <button data-tool="highlight" data-i18n-title="toolHighlight">
+        <svg viewBox="0 0 24 24"><path d="M15 3.5l5.5 5.5-8.5 8.5-5.5-5.5z"/><path d="M6.5 12L4 17.5l2.5 2.5L12 17.5"/><path d="M13 21h8"/></svg>
+      </button>
+      <button data-tool="blur" data-i18n-title="toolBlur">
+        <svg viewBox="0 0 24 24"><path d="M12 3c4 5 6.5 8.2 6.5 11.5a6.5 6.5 0 0 1-13 0C5.5 11.2 8 8 12 3z"/></svg>
+      </button>
+      <button data-tool="pixel" data-i18n-title="toolPixel">
+        <svg viewBox="0 0 24 24"><path d="M4 4h5v5H4zM9.5 9.5h5v5h-5zM15 4h5v5h-5zM4 15h5v5H4zM15 15h5v5h-5z"/></svg>
+      </button>
+      <button data-tool="cover" data-i18n-title="toolCover">
+        <svg viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="9" rx="1" fill="currentColor"/></svg>
+      </button>
+      <hr>
+      <button data-tool="pagetext" data-i18n-title="toolPageTextNone" disabled>
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5" stroke-dasharray="3 2.6"/><path d="M7.5 9.5h9M7.5 12.5h9M7.5 15.5h5"/></svg>
+      </button>
+      <hr>
+      <button id="color-button" data-action="colors" data-i18n-title="colorsTitle">
+        <span class="ring"><span class="dot"></span></span>
+      </button>
+    </nav>
+
+    <div id="stage">
+      <div id="canvas-wrap">
+        <canvas id="canvas"></canvas>
+        <textarea id="text-editor" spellcheck="false" hidden></textarea>
+        <div id="crop-actions" hidden>
+          <button class="btn accent" data-action="crop-apply" data-i18n="cropApply" data-i18n-title="cropApplyTitle"></button>
+          <button class="btn" data-action="crop-cancel" data-i18n-title="cropCancelTitle">✕</button>
+        </div>
+      </div>
+      <div id="open-panel" hidden>
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5L5 20"/></svg>
+        <p data-i18n="openPrompt"></p>
+        <button class="btn accent" data-action="open" data-i18n="openChoose"></button>
+      </div>
+      <p id="message" hidden></p>
+    </div>
+
+    <!-- Documento a più pagine: le immagini messe da parte, da salvare o stampare insieme (vedi document.js) -->
+    <aside id="document" hidden>
+      <header>
+        <span id="doc-title"></span>
+        <button class="hint" data-hint="hintDocument" data-section="document" data-i18n-title="helpWhat">?</button>
+        <button class="btn icon" data-doc="close" data-i18n-title="docCloseTitle">✕</button>
+      </header>
+      <p id="doc-empty" data-i18n="docEmpty"></p>
+      <ol id="doc-pages"></ol>
+      <div id="doc-actions">
+        <button class="btn accent" data-doc="add">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span data-i18n="docAdd"></span>
+        </button>
+        <button class="btn" data-doc="files" data-i18n-title="docAddFilesTitle">
+          <svg viewBox="0 0 24 24"><path d="M3 7a1 1 0 0 1 1-1h5l2 2.5h9a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg><span data-i18n="docAddFiles"></span>
+        </button>
+        <input type="file" id="doc-files" accept="image/*,application/pdf,.pdf" multiple hidden>
+        <label data-i18n-title="docLayoutTitle">
+          <span data-i18n="docLayout"></span>
+          <select id="doc-layout">
+            <option value="original" data-i18n="docOriginal"></option>
+            <option value="a4">A4</option>
+          </select>
+        </label>
+        <div class="row">
+          <button class="btn" data-doc="save" data-i18n="docSave"></button>
+          <button class="btn" data-doc="print" data-i18n="docPrint"></button>
+        </div>
+        <button class="btn danger" data-doc="clear">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg><span data-i18n="docClear"></span>
+        </button>
+        <div id="doc-confirm" hidden>
+          <span data-i18n="docClearAsk"></span>
+          <div class="row">
+            <button class="btn danger" data-doc="clear-yes" data-i18n="docClearYes"></button>
+            <button class="btn" data-doc="clear-no" data-i18n="docClearNo"></button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div id="context-menu" hidden>
+    <button data-action="copy" data-i18n="menuCopy"></button>
+    <button data-action="copy-text" data-i18n="menuCopyText"></button>
+    <button data-action="save" data-i18n="save"></button>
+    <hr>
+    <button data-action="copy-object" data-i18n="menuCopyObject"></button>
+    <button data-action="paste-object" data-i18n="menuPasteObject"></button>
+    <button data-action="delete" data-i18n="menuDelete"></button>
+    <hr>
+    <button data-action="layer-front" data-i18n="menuFront"></button>
+    <button data-action="layer-forward" data-i18n="menuForward"></button>
+    <button data-action="layer-backward" data-i18n="menuBackward"></button>
+    <button data-action="layer-back" data-i18n="menuBack"></button>
+  </div>
+
+  <div id="toast" hidden></div>
+  <!-- Opzioni dello strumento o del segno scelto: una tendina che scivola fuori accanto al suo pulsante,
+       solo per gli strumenti che ne hanno (vedi editor.js) -->
+  <div class="flyout" id="tool-options" hidden>
+    <div class="prop" data-prop="width">
+      <label for="stroke-width" id="width-label"></label>
+      <select id="stroke-width" data-i18n-title="strokeTitle">
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="12">12</option>
+      </select>
+      <button class="hint" id="eraser-hint" data-hint="hintEraser" data-section="hide" data-i18n-title="helpWhat" hidden>?</button>
+    </div>
+    <div class="prop" data-prop="font">
+      <label for="font-size" data-i18n="propsSize"></label>
+      <select id="font-size" data-i18n-title="fontSizeTitle">
+        <option value="12">12</option>
+        <option value="14">14</option>
+        <option value="16">16</option>
+        <option value="20">20</option>
+        <option value="24">24</option>
+        <option value="32">32</option>
+        <option value="48">48</option>
+        <option value="64">64</option>
+      </select>
+      <span class="styles">
+        <button class="btn toggle" data-toggle="bold" data-keep-focus data-i18n-title="bold"><b data-i18n="boldLetter"></b></button>
+        <button class="btn toggle" data-toggle="italic" data-keep-focus data-i18n-title="italic"><i data-i18n="italicLetter"></i></button>
+      </span>
+    </div>
+    <div class="prop" data-prop="step">
+      <label for="step-style" data-i18n="propsStepContent"></label>
+      <select id="step-style" data-i18n-title="stepStyleTitle">
+        <option value="number">1, 2, 3</option>
+        <option value="upper">A, B, C</option>
+        <option value="lower">a, b, c</option>
+        <option value="roman">I, II, III</option>
+        <option value="symbol:✓">✓</option>
+        <option value="symbol:✗">✗</option>
+        <option value="symbol:★">★</option>
+        <option value="symbol:!">!</option>
+        <option value="symbol:?">?</option>
+        <option value="custom" data-i18n="stepCustom"></option>
+      </select>
+      <input type="text" id="step-label" maxlength="6" spellcheck="false" autocomplete="off" data-i18n-title="stepLabelTitle" hidden>
+      <button class="btn toggle" data-action="step-sub" data-keep-focus data-i18n-title="stepSubTitle">1.1</button>
+      <button class="hint" data-hint="hintStep" data-section="annotate" data-i18n-title="helpWhat">?</button>
+    </div>
+  </div>
+  <!-- Colori: una tendina accanto agli strumenti, che esce dal cerchio colorato -->
+  <div class="flyout" id="color-pop" hidden>
+    <div id="swatches">
+    <button data-color="#e53935" data-keep-focus data-i18n-title="colorRed"></button>
+    <button data-color="#ffeb3b" data-keep-focus data-i18n-title="colorYellow"></button>
+    <button data-color="#43a047" data-keep-focus data-i18n-title="colorGreen"></button>
+    <button data-color="#1e88e5" data-keep-focus data-i18n-title="colorBlue"></button>
+    <button data-color="#111111" data-keep-focus data-i18n-title="colorBlack"></button>
+    <button data-color="#ffffff" data-keep-focus data-i18n-title="colorWhite"></button>
+    </div>
+    <div class="row">
+      <input type="color" id="color" data-i18n-title="color">
+      <input type="text" id="hex" maxlength="9" spellcheck="false" autocomplete="off" data-i18n-title="hexTitle">
+      <button class="btn icon" data-tool="picker" data-i18n-title="toolPicker">
+      <svg viewBox="0 0 24 24"><path d="M4 20l1-4.5 8.5-8.5 3.5 3.5L8.5 19z"/><path d="M12 5.5l6.5 6.5"/><path d="M15 8.5l2-2.5a2 2 0 0 1 3 3l-2.5 2"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Fogli preparati per la stampa: si vedono solo sulla carta -->
+  <div id="print-area"></div>
+
+  <script type="module" src="editor.js"></script>
+</body>
+</html>

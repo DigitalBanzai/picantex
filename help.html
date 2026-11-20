@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="helpTitle">Picantex</title>
+  <link rel="stylesheet" href="help.css">
+</head>
+<body>
+  <!-- Aiuto: il testo sta in help/<lingua>.html, nella lingua scelta in Picantex (vedi help.js) -->
+  <header id="bar">
+    <img src="icons/icon32.png" alt="" width="24" height="24">
+    <h1 data-i18n="helpTitle"></h1>
+    <span class="spacer"></span>
+    <span id="version"></span>
+  </header>
+
+  <div id="layout">
+    <nav id="contents">
+      <h2 data-i18n="helpContents"></h2>
+      <ol id="toc"></ol>
+    </nav>
+    <article id="help"></article>
+  </div>
+
+  <script type="module" src="help.js"></script>
+</body>
+</html>

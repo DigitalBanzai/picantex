@@ -1,0 +1,341 @@
+:root {
+  --bar: #33363b;
+  --bar-hover: #4b5058;
+  --line: #55595f;
+  --ink: #e8eaed;
+  --muted: #a9adb4;
+  --accent: #5ec26a;
+  --stage: #646b78;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html, body { height: 100%; }
+body {
+  margin: 0; display: flex; flex-direction: column;
+  background: var(--stage); color: var(--ink);
+  font: 13px/1.3 system-ui, sans-serif;
+}
+
+/* --- Barra superiore --- */
+
+#topbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px;
+  min-height: 46px; padding: 6px 12px;
+  background: var(--bar); border-bottom: 1px solid #1f2124;
+}
+.group { display: flex; align-items: center; gap: 4px; }
+label { display: flex; align-items: center; gap: 4px; color: var(--muted); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 8px;
+  border: 1px solid transparent; border-radius: 5px; background: none;
+  color: var(--ink); font: inherit; cursor: pointer; white-space: nowrap;
+}
+.btn:hover:not(:disabled) { background: var(--bar-hover); }
+.btn:disabled { opacity: 0.35; cursor: default; }
+.btn.accent { color: var(--accent); font-weight: 600; }
+.btn.icon, .btn.toggle { width: 30px; padding: 0; justify-content: center; }
+.btn.toggle { font-size: 15px; font-family: Georgia, serif; }
+.btn.toggle.active, .btn[data-tool].active, .btn[data-action="doc-toggle"].active {
+  background: var(--bar-hover); border-color: var(--accent); color: var(--accent);
+}
+.btn.danger { color: #ff8a80; border-color: #a04a4a; }
+.btn.danger:hover:not(:disabled) { background: #5a2e2e; }
+#doc-count:empty { display: none; }
+
+svg {
+  width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+
+select {
+  height: 30px; padding: 0 6px; border: 1px solid var(--line); border-radius: 5px;
+  background: #26282c; color: var(--ink); font: inherit; cursor: pointer;
+}
+input[type="color"] {
+  width: 34px; height: 30px; padding: 2px; border: 1px solid var(--line); border-radius: 5px;
+  background: #26282c; cursor: pointer;
+}
+
+#hex {
+  width: 76px; height: 30px; padding: 0 6px; border: 1px solid var(--line); border-radius: 5px;
+  background: #26282c; color: var(--ink); font: 12px ui-monospace, monospace;
+}
+#hex:focus { outline: none; border-color: var(--accent); }
+/* Scelte dei bollini: una barra mobile accanto allo strumento (la posizione la mette lo script) */
+#step-options {
+  position: fixed; z-index: 15; padding: 4px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--bar); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+#step-style { max-width: 110px; }
+#step-label {
+  width: 70px; height: 30px; padding: 0 6px; border: 1px solid var(--line); border-radius: 5px;
+  background: #26282c; color: var(--ink); font: inherit;
+}
+#step-label:focus { outline: none; border-color: var(--accent); }
+.btn.toggle[data-action="step-sub"] { width: auto; padding: 0 6px; font: 600 12px system-ui, sans-serif; }
+.btn.toggle.active[data-action="step-sub"] { background: var(--bar-hover); border-color: var(--accent); color: var(--accent); }
+
+#swatches { display: flex; gap: 4px; }
+#swatches button {
+  width: 18px; height: 18px; padding: 0; border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%; cursor: pointer;
+}
+#swatches button:hover { transform: scale(1.2); }
+
+#size-info { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+#language, #zoom { color: var(--muted); }
+/* Nelle finestre strette la barra resta su una riga rinunciando a ciò che si legge anche altrove:
+   la scritta di «Copia» (resta l'icona) e la percentuale, che compare già nel menu dello zoom */
+@media (max-width: 1360px) {
+  [data-action="copy"].btn { width: 30px; padding: 0; justify-content: center; }
+  [data-action="copy"] span, #size-zoom { display: none; }
+}
+
+/* --- Barra degli strumenti --- */
+
+#main { flex: 1; display: flex; min-height: 0; }
+
+#toolbar {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  width: 48px; padding: 8px 0; overflow-y: auto;
+  background: var(--bar);
+}
+#toolbar button {
+  display: grid; place-items: center; width: 36px; height: 36px; flex: none; padding: 0;
+  border: 0; border-radius: 6px; background: none; color: var(--ink); cursor: pointer;
+}
+#toolbar button:hover:not(:disabled) { background: var(--bar-hover); }
+#toolbar button:disabled { opacity: 0.35; cursor: default; }
+#toolbar button.active { background: #1f2124; color: var(--accent); }
+#toolbar svg { width: 20px; height: 20px; }
+#toolbar hr { width: 26px; margin: 4px 0; border: 0; border-top: 1px solid var(--line); }
+/* Nell'editor la colonna ha in più la freccetta delle proprietà e il cerchio dei colori: pulsanti un po'
+   più bassi, così entra tutta anche negli schermi bassi dei portatili */
+.editor #toolbar { gap: 1px; padding: 4px 0; }
+.editor #toolbar button { height: 30px; }
+.editor #toolbar hr { margin: 2px 0; }
+
+/* --- Area di lavoro --- */
+
+/* scrollbar-gutter: la barra di scorrimento non deve cambiare lo spazio disponibile quando l'immagine si adatta */
+#stage { flex: 1; overflow: auto; padding: 24px; scrollbar-gutter: stable; }
+#canvas-wrap {
+  position: relative; width: max-content; margin: 0 auto;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+}
+canvas { display: block; touch-action: none; }
+
+#text-editor {
+  position: absolute; margin: 0; padding: 0; border: 0; resize: none; overflow: hidden;
+  background: transparent; outline: 1px dashed #1a73e8; outline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+#crop-actions {
+  position: absolute; display: flex; gap: 4px; padding: 4px;
+  border-radius: 6px; background: var(--bar); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+#message { max-width: 520px; margin: 80px auto; font-size: 15px; text-align: center; }
+
+/* Editor aperto senza una cattura: invito a fornire un'immagine */
+#open-panel {
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  max-width: 520px; margin: 70px auto; padding: 44px 32px;
+  border: 2px dashed rgba(255, 255, 255, 0.45); border-radius: 14px; text-align: center;
+}
+#open-panel svg { width: 48px; height: 48px; stroke-width: 1.3; }
+#open-panel p { margin: 0; font-size: 15px; }
+#open-panel .btn { border-color: var(--accent); }
+/* Un file trascinato sopra la finestra */
+#stage.drop { outline: 3px dashed var(--accent); outline-offset: -10px; }
+
+/* --- Menu contestuale e avvisi --- */
+
+#context-menu {
+  position: fixed; z-index: 10; min-width: 190px; padding: 4px;
+  border: 1px solid var(--line); border-radius: 6px;
+  background: var(--bar); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+#context-menu button {
+  display: block; width: 100%; padding: 7px 10px; border: 0; border-radius: 4px;
+  background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer;
+}
+#context-menu button:hover:not(:disabled) { background: var(--bar-hover); }
+#context-menu button:disabled { opacity: 0.35; cursor: default; }
+#context-menu hr { margin: 4px 0; border: 0; border-top: 1px solid var(--line); }
+
+/* --- Tendine della barra in alto: «Apri» e la verifica (vedi editor.js) --- */
+
+.btn .caret { width: 12px; height: 12px; margin-left: -3px; }
+.btn[data-action="verify-menu"].on, .btn[data-action="open-menu"].open, .btn[data-action="verify-menu"].open {
+  background: var(--bar-hover); border-color: var(--accent); color: var(--accent);
+}
+.dropdown {
+  position: fixed; z-index: 30; min-width: 250px; padding: 6px;
+  border: 1px solid var(--line); border-radius: 8px; background: var(--bar); box-shadow: 0 8px 26px rgba(0, 0, 0, 0.5);
+}
+.dropdown > button {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; border: 0; border-radius: 6px;
+  background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer;
+}
+.dropdown > button:hover { background: var(--bar-hover); }
+.dropdown > button svg { color: var(--accent); }
+.dropdown > button span { margin-right: auto; }
+.dropdown small { color: var(--muted); }
+/* Interruttori, come nel menu dell'icona */
+.switch { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 8px 10px; color: var(--ink); cursor: pointer; }
+.switch input {
+  appearance: none; position: relative; flex: none; width: 30px; height: 16px; margin: 0;
+  border-radius: 8px; background: #6a6f77; cursor: pointer; transition: background 0.15s;
+}
+.switch input::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--ink); transition: left 0.15s;
+}
+.switch input:checked { background: var(--accent); }
+.switch input:checked::after { left: 16px; }
+.switch input:disabled { opacity: 0.4; cursor: default; }
+.switch:has(input:disabled) { color: var(--muted); cursor: default; }
+/* L'impronta del file dopo un salvataggio (strumenti di verifica) */
+#verify-menu { width: 360px; }
+#fingerprint { margin-top: 4px; padding: 10px 10px 4px; border-top: 1px solid var(--line); }
+#fingerprint h2 { margin: 0 0 6px; font-size: 13px; }
+#fingerprint .name { margin: 0 0 6px; color: var(--muted); overflow-wrap: anywhere; }
+#fingerprint .hash {
+  display: block; padding: 6px 8px; border-radius: 4px; background: #1f2124;
+  font: 12px/1.5 ui-monospace, "DejaVu Sans Mono", monospace; overflow-wrap: anywhere; user-select: all;
+}
+#fingerprint .times { margin: 8px 0 10px; color: var(--muted); font-size: 12px; }
+#fingerprint .actions { display: flex; gap: 8px; }
+#fingerprint .actions .btn { border-color: var(--line); }
+
+/* --- Tendine laterali: le opzioni dello strumento e i colori (vedi editor.js) ---
+   Scivolano fuori da sotto la colonna degli strumenti, accanto al pulsante da cui nascono, con un fondo
+   appena trasparente: sono scelte di contorno, non coprono del tutto l'immagine. */
+
+.editor #toolbar { position: relative; z-index: 31; }
+.flyout {
+  position: fixed; z-index: 30; display: flex; align-items: center; gap: 10px; padding: 8px 12px 8px 10px;
+  border: 1px solid var(--line); border-left: 0; border-radius: 0 8px 8px 0;
+  background: rgba(51, 54, 59, 0.88); backdrop-filter: blur(6px); box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.18s ease-out, opacity 0.18s ease-out, display 0.18s allow-discrete;
+}
+.flyout[hidden] { transform: translateX(-100%); opacity: 0; }
+@starting-style {
+  .flyout { transform: translateX(-100%); opacity: 0; }
+}
+#tool-options .prop { display: flex; align-items: center; gap: 6px; }
+#tool-options .prop > label { color: var(--muted); font-size: 12px; white-space: nowrap; }
+#tool-options .styles { display: flex; gap: 4px; }
+#tool-options .btn.toggle { border-color: var(--line); }
+#tool-options #step-style { max-width: 110px; }
+/* Un triangolino nell'angolo dei pulsanti che hanno opzioni, come nei programmi di grafica */
+#toolbar button.has-options { position: relative; }
+#toolbar button.has-options::after {
+  content: ""; position: absolute; right: 4px; bottom: 4px;
+  border-style: solid; border-width: 0 0 5px 5px; border-color: transparent transparent var(--muted) transparent;
+}
+#toolbar button.has-options.active::after { border-bottom-color: var(--accent); }
+
+/* --- Colori: il cerchio arcobaleno in fondo agli strumenti e la sua finestrella --- */
+
+#color-button .ring {
+  display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  background: conic-gradient(#e53935, #ffeb3b, #43a047, #00bcd4, #1e88e5, #8e24aa, #e53935);
+}
+#color-button .dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--bar); box-sizing: content-box; }
+#color-pop { flex-direction: column; align-items: stretch; gap: 0; padding: 10px 12px 10px 10px; }
+#color-pop #swatches { gap: 8px; }
+#color-pop #swatches button { width: 24px; height: 24px; }
+#color-pop .row { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
+#color-pop .btn[data-tool="picker"] { border-color: var(--line); }
+#color-pop .btn[data-tool="picker"].active { border-color: var(--accent); color: var(--accent); }
+
+#toast {
+  position: fixed; left: 50%; bottom: 24px; z-index: 20; display: flex; align-items: center; gap: 14px;
+  transform: translateX(-50%); max-width: 80vw; padding: 9px 16px; border-radius: 6px;
+  background: rgba(20, 21, 24, 0.94); color: #fff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+#toast .btn { flex: none; border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+/* --- Documento a più pagine --- */
+
+#document {
+  display: flex; flex-direction: column; flex: none; width: 264px;
+  background: var(--bar); border-left: 1px solid #1f2124;
+}
+/* Mentre si trascinano dei file sopra il pannello: lasciandoli qui diventano pagine */
+#document.drop { box-shadow: inset 0 0 0 2px var(--accent); }
+#document header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 8px 8px 12px; border-bottom: 1px solid #1f2124; font-weight: 600;
+}
+#doc-empty { margin: 0; padding: 14px 12px; color: var(--muted); }
+#doc-pages {
+  flex: 1; display: flex; flex-direction: column; gap: 10px;
+  margin: 0; padding: 10px; overflow-y: auto; list-style: none;
+}
+#doc-pages li {
+  position: relative; padding: 6px; border: 1px solid var(--line); border-radius: 6px;
+  background: #26282c; cursor: grab;
+}
+#doc-pages li.dragging { opacity: 0.4; }
+#doc-pages img { display: block; width: 100%; border-radius: 3px; }
+#doc-pages .number {
+  position: absolute; top: 10px; left: 10px; min-width: 22px; padding: 1px 6px;
+  border-radius: 10px; background: rgba(20, 21, 24, 0.85); font-size: 12px; text-align: center;
+}
+#doc-pages .remove {
+  position: absolute; top: 9px; right: 9px; width: 22px; height: 22px; padding: 0;
+  border: 0; border-radius: 50%; background: rgba(20, 21, 24, 0.85); color: var(--ink);
+  font-size: 11px; cursor: pointer;
+}
+#doc-pages .remove:hover { background: #a04a4a; }
+#doc-pages .size { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; }
+
+#doc-actions {
+  display: flex; flex-direction: column; gap: 8px; padding: 10px;
+  border-top: 1px solid #1f2124;
+}
+#doc-actions .btn { justify-content: center; border-color: var(--line); }
+#doc-actions .btn.danger { border-color: #a04a4a; }
+#doc-actions label { justify-content: space-between; }
+#doc-actions .row { display: flex; gap: 8px; }
+#doc-actions .row .btn { flex: 1; }
+#doc-confirm { display: flex; flex-direction: column; gap: 8px; color: #ff8a80; }
+
+/* --- Stampa: sulla carta vanno solo i fogli preparati, uno per pagina A4 --- */
+
+#print-area { display: none; }
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { display: block; height: auto; background: #fff; }
+  body > :not(#print-area) { display: none !important; }
+  #print-area { display: block; }
+  .sheet {
+    display: flex; justify-content: center; align-items: flex-start;
+    width: 210mm; height: 297mm; padding: 10mm; overflow: hidden; break-after: page;
+  }
+  .sheet:last-child { break-after: auto; }
+  .sheet img { display: block; flex: none; }
+}
+
+/* --- I «?» e la loro nuvoletta (vedi hint.js) --- */
+
+button.hint {
+  display: inline-grid; place-items: center; flex: none; width: 18px; height: 18px; padding: 0; margin: 0 6px;
+  border: 1px solid var(--line); border-radius: 50%; background: none; color: var(--muted); font: 600 11px system-ui, sans-serif; cursor: pointer;
+  vertical-align: middle;
+}
+button.hint:hover { border-color: var(--accent); color: var(--accent); }
+.hint-bubble {
+  position: fixed; z-index: 50; width: 250px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px;
+  background: #26282c; color: var(--ink); font: 12px/1.45 system-ui, sans-serif; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+.hint-bubble p { margin: 0 0 6px; }
+.hint-bubble a { color: var(--accent); }
+#document header .hint { margin-right: auto; }

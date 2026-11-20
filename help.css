@@ -1,0 +1,66 @@
+/* Aiuto: stesso aspetto delle altre pagine di Picantex, scritto per essere letto */
+:root {
+  --bar: #33363b;
+  --bar-hover: #4b5058;
+  --line: #55595f;
+  --ink: #e8eaed;
+  --muted: #a9adb4;
+  --accent: #5ec26a;
+  --bad: #ff8a80;
+  --page: #1f2124;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 15px/1.6 system-ui, sans-serif; }
+
+#bar {
+  position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 10px;
+  padding: 10px 18px; background: var(--bar); border-bottom: 1px solid #1a1b1e;
+}
+h1 { margin: 0; font-size: 17px; }
+.spacer { flex: 1; }
+#version { color: var(--muted); font-size: 13px; }
+
+#layout { display: flex; gap: 36px; max-width: 1100px; padding: 24px 18px 80px; }
+#contents { position: sticky; top: 70px; flex: none; align-self: flex-start; width: 230px; }
+#contents h2 { margin: 0 0 8px; color: var(--muted); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+#toc { margin: 0; padding: 0; list-style: none; }
+#toc a { display: block; padding: 4px 10px; border-left: 2px solid var(--line); color: var(--muted); text-decoration: none; }
+#toc a:hover, #toc a.current { border-left-color: var(--accent); color: var(--ink); }
+
+#help { flex: 1; min-width: 0; max-width: 760px; }
+#help section { padding-bottom: 18px; margin-bottom: 26px; border-bottom: 1px solid #2c2e33; }
+#help section:target h2 { color: var(--accent); }
+#help h2 { margin: 0 0 12px; font-size: 21px; }
+#help p, #help li { color: #d6d9de; }
+#help b { color: var(--ink); }
+#help ul, #help ol { padding-left: 22px; }
+#help li { margin-bottom: 6px; }
+#help a { color: var(--accent); }
+code { padding: 1px 5px; border-radius: 4px; background: #2a2c30; font: 13px ui-monospace, "DejaVu Sans Mono", monospace; }
+kbd {
+  display: inline-block; min-width: 22px; padding: 0 6px; border: 1px solid var(--line); border-bottom-width: 2px;
+  border-radius: 5px; background: #2a2c30; color: var(--ink); font: 12px/20px system-ui, sans-serif; text-align: center;
+}
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 8px 10px; border-bottom: 1px solid #2c2e33; text-align: left; vertical-align: top; }
+th { color: var(--muted); font-size: 13px; font-weight: 600; }
+td:first-child { white-space: nowrap; }
+
+/* Svuotare l'archivio delle catture */
+.purge { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 6px 0 16px; }
+.btn {
+  display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border: 1px solid var(--line); border-radius: 6px;
+  background: none; color: var(--ink); font: inherit; cursor: pointer;
+}
+.btn:hover { background: var(--bar-hover); }
+.btn.danger { border-color: #a04a4a; color: var(--bad); }
+.purge .ask { flex-basis: 100%; margin: 0; }
+.purge .done { color: var(--accent); }
+
+@media (max-width: 760px) {
+  #layout { flex-direction: column; gap: 10px; }
+  #contents { position: static; width: auto; }
+}
